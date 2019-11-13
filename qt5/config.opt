@@ -1,0 +1,6 @@
+-prefix
+/home/issiki/ae/qt5/qtbase
+-opensource
+-nomake
+tests
+-confirm-license

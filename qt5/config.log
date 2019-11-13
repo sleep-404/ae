@@ -1,0 +1,1812 @@
+Command line: -prefix /home/issiki/ae/qt5/qtbase -opensource -nomake tests
+executing config test use_gold_linker
++ cd /home/issiki/ae/qt5/config.tests && g++ -pipe -fuse-ld=gold -o conftest-out conftest.cpp
+test config.qtbase.tests.use_gold_linker succeeded
+executing config test machineTuple
++ g++ -dumpmachine
+> x86_64-linux-gnu
+test config.qtbase.tests.machineTuple succeeded
+executing config test verifyspec
++ cd /home/issiki/ae/qt5/config.tests/verifyspec && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtbase/config.tests/verifyspec
++ cd /home/issiki/ae/qt5/config.tests/verifyspec && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtbase/config.tests/verifyspec -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o verifyspec.o /home/issiki/ae/qt5/qtbase/config.tests/verifyspec/verifyspec.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o verifyspec verifyspec.o      
+test config.qtbase.tests.verifyspec succeeded
+executing config test architecture
++ cd /home/issiki/ae/qt5/config.tests/arch && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtbase/config.tests/arch
++ cd /home/issiki/ae/qt5/config.tests/arch && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtbase/config.tests/arch -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o arch.o /home/issiki/ae/qt5/qtbase/config.tests/arch/arch.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o arch arch.o      
+Detected architecture: x86_64 (mmx sse sse2)
+test config.qtbase.tests.architecture gave result x86_64
+executing config test sse2
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse2 /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -msse2 -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE2 -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse2 succeeded
+executing config test aesni
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=aesni /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -maes -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AESNI -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.aesni succeeded
+executing config test alloca_h
++ cd /home/issiki/ae/qt5/config.tests/alloca_h && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/alloca_h
++ cd /home/issiki/ae/qt5/config.tests/alloca_h && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o alloca_h main.o      
+test config.qtbase.tests.alloca_h succeeded
+executing config test sse3
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse3 /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msse3 -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE3 -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse3 succeeded
+executing config test ssse3
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=ssse3 /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mssse3 -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSSE3 -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.ssse3 succeeded
+executing config test sse4_1
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse4_1 /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msse4.1 -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE4_1 -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse4_1 succeeded
+executing config test sse4_2
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse4_2 /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msse4.2 -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE4_2 -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse4_2 succeeded
+executing config test avx
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx succeeded
+executing config test avx2
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx2 /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx2 -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX2 -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx2 succeeded
+executing config test avx512f
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512f /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512f -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512F -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512f succeeded
+executing config test avx512bw
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512bw /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512bw -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512BW -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512bw succeeded
+executing config test avx512cd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512cd /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512cd -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512CD -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512cd succeeded
+executing config test avx512dq
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512dq /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512dq -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512DQ -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512dq succeeded
+executing config test avx512er
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512er /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512er -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512ER -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512er succeeded
+executing config test avx512ifma
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512ifma /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512ifma -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512IFMA -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512ifma succeeded
+executing config test avx512pf
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512pf /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512pf -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512PF -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512pf succeeded
+executing config test avx512vbmi
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512vbmi /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512vbmi -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512VBMI -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512vbmi succeeded
+executing config test avx512vl
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512vl /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512vl -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512VL -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512vl succeeded
+executing config test c++14
++ cd /home/issiki/ae/qt5/config.tests/c++14 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/c++14
++ cd /home/issiki/ae/qt5/config.tests/c++14 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++1y -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o c++14 main.o      
+test config.qtbase.tests.c++14 succeeded
+executing config test c++1z
++ cd /home/issiki/ae/qt5/config.tests/c++1z && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/c++1z
++ cd /home/issiki/ae/qt5/config.tests/c++1z && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++1z -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:8:19: fatal error: variant: No such file or directory
+> compilation terminated.
+> Makefile:167: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase.tests.c++1z FAILED
+executing config test c99
++ cd /home/issiki/ae/qt5/config.tests/c99 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/c99
++ cd /home/issiki/ae/qt5/config.tests/c99 && MAKEFLAGS= /usr/bin/make
+> gcc -c -pipe -O2 -std=gnu99 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.c
+> g++ -Wl,-O1 -fuse-ld=gold -o c99 main.o      
+test config.qtbase.tests.c99 succeeded
+executing config test c11
++ cd /home/issiki/ae/qt5/config.tests/c11 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/c11
++ cd /home/issiki/ae/qt5/config.tests/c11 && MAKEFLAGS= /usr/bin/make
+> gcc -c -pipe -O2 -std=gnu11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.c
+> g++ -Wl,-O1 -fuse-ld=gold -o c11 main.o      
+test config.qtbase.tests.c11 succeeded
+executing config test pkg-config
+Found pkg-config from path: /usr/bin/pkg-config
+test config.qtbase.tests.pkg-config succeeded
+Global lib dirs: [] [/usr/lib/gcc/x86_64-linux-gnu/5 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib]
+Global inc dirs: [] [/usr/include/c++/5 /usr/include/x86_64-linux-gnu/c++/5 /usr/include/c++/5/backward /usr/lib/gcc/x86_64-linux-gnu/5/include /usr/local/include /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed /usr/include/x86_64-linux-gnu /usr/include]
+looking for library dbus
+Trying source 0 (type pkgConfig) of library dbus ...
++ /usr/bin/pkg-config --exists --silence-errors dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --modversion dbus-1 '>=' 1.2
+> 1.10.6
++ /usr/bin/pkg-config --libs-only-L dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --libs-only-l dbus-1 '>=' 1.2
+> -ldbus-1
++ /usr/bin/pkg-config --cflags dbus-1 '>=' 1.2
+> -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
++ cd /home/issiki/ae/qt5/config.tests/dbus && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += dbus' 'QMAKE_LIBS_DBUS = /usr/lib/x86_64-linux-gnu/libdbus-1.so' 'QMAKE_INCDIR_DBUS = /usr/include/dbus-1.0 /usr/lib/x86_64-linux-gnu/dbus-1.0/include' /home/issiki/ae/qt5/config.tests/dbus
++ cd /home/issiki/ae/qt5/config.tests/dbus && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o dbus main.o   /usr/lib/x86_64-linux-gnu/libdbus-1.so   
+ => source accepted.
+test config.qtbase.libraries.dbus succeeded
+executing config test enable_new_dtags
++ cd /home/issiki/ae/qt5/config.tests && g++ -pipe -fuse-ld=gold -Wl,--enable-new-dtags -o conftest-out conftest.cpp
+test config.qtbase.tests.enable_new_dtags succeeded
+executing config test f16c
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=f16c /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mf16c -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_F16C -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.f16c succeeded
+looking for library host_dbus
+Trying source 0 (type pkgConfig) of library host_dbus ...
++ /usr/bin/pkg-config --exists --silence-errors dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --modversion dbus-1 '>=' 1.2
+> 1.10.6
++ /usr/bin/pkg-config --libs-only-L dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --libs-only-l dbus-1 '>=' 1.2
+> -ldbus-1
++ /usr/bin/pkg-config --cflags dbus-1 '>=' 1.2
+> -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
+ => source accepted.
+test config.qtbase.libraries.host_dbus succeeded
+looking for library libudev
+Trying source 0 (type pkgConfig) of library libudev ...
++ /usr/bin/pkg-config --exists --silence-errors libudev
++ /usr/bin/pkg-config --modversion libudev
+> 229
++ /usr/bin/pkg-config --libs-only-L libudev
++ /usr/bin/pkg-config --libs-only-l libudev
+> -ludev
++ /usr/bin/pkg-config --cflags libudev
++ cd /home/issiki/ae/qt5/config.tests/libudev && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libudev' 'QMAKE_LIBS_LIBUDEV = /usr/lib/x86_64-linux-gnu/libudev.so' /home/issiki/ae/qt5/config.tests/libudev
++ cd /home/issiki/ae/qt5/config.tests/libudev && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o libudev main.o   /usr/lib/x86_64-linux-gnu/libudev.so   
+ => source accepted.
+test config.qtbase.libraries.libudev succeeded
+executing config test posix_fallocate
++ cd /home/issiki/ae/qt5/config.tests/posix_fallocate && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/posix_fallocate
++ cd /home/issiki/ae/qt5/config.tests/posix_fallocate && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o posix_fallocate main.o      
+test config.qtbase.tests.posix_fallocate succeeded
+executing config test precompile_header
++ cd /home/issiki/ae/qt5/config.tests/precompile_header && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/precompile_header
++ cd /home/issiki/ae/qt5/config.tests/precompile_header && MAKEFLAGS= /usr/bin/make
+> g++ -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -x c++-header -c header.h -o .pch/precompile_header.gch/c++
+> g++ -c -include .pch/precompile_header -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o precompile_header main.o      
+test config.qtbase.tests.precompile_header succeeded
+executing config test rdrnd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=rdrnd /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mrdrnd -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_RDRND -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.rdrnd succeeded
+executing config test reduce_exports
++ cd /home/issiki/ae/qt5/config.tests/reduce_exports && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/reduce_exports
++ cd /home/issiki/ae/qt5/config.tests/reduce_exports && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -fvisibility=hidden -fvisibility-inlines-hidden -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> rm -f libreduce_exports.so.1.0.0 libreduce_exports.so libreduce_exports.so.1 libreduce_exports.so.1.0
+> g++ -Wl,-O1 -fuse-ld=gold -shared -Wl,-soname,libreduce_exports.so.1 -o libreduce_exports.so.1.0.0 main.o      
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so.1
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so.1.0
+test config.qtbase.tests.reduce_exports succeeded
+executing config test reduce_relocations
++ cd /home/issiki/ae/qt5/config.tests/reduce_relocations && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/reduce_relocations
++ cd /home/issiki/ae/qt5/config.tests/reduce_relocations && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> rm -f libreduce_relocations.so.1.0.0 libreduce_relocations.so libreduce_relocations.so.1 libreduce_relocations.so.1.0
+> g++ -Wl,-O1 -fuse-ld=gold -shared -Wl,-Bsymbolic-functions -Wl,-soname,libreduce_relocations.so.1 -o libreduce_relocations.so.1.0.0 main.o      
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so.1
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so.1.0
+test config.qtbase.tests.reduce_relocations succeeded
+executing config test shani
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=shani /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msha -O2 -std=gnu++11 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SHANI -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.shani succeeded
+executing config test stl
++ cd /home/issiki/ae/qt5/config.tests/stl && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtbase/config.tests/stl
++ cd /home/issiki/ae/qt5/config.tests/stl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtbase/config.tests/stl -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o stltest.o /home/issiki/ae/qt5/qtbase/config.tests/stl/stltest.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o stl stltest.o      
+test config.qtbase.tests.stl succeeded
+looking for library zlib
+Trying source 0 (type inline) of library zlib ...
+  => source failed condition 'config.msvc'.
+Trying source 1 (type inline) of library zlib ...
+  => source failed condition 'config.msvc'.
+Trying source 2 (type inline) of library zlib ...
++ cd /home/issiki/ae/qt5/config.tests/zlib && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += zlib' 'QMAKE_LIBS_ZLIB = /usr/lib/x86_64-linux-gnu/libz.so' /home/issiki/ae/qt5/config.tests/zlib
++ cd /home/issiki/ae/qt5/config.tests/zlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o zlib main.o   /usr/lib/x86_64-linux-gnu/libz.so   
+ => source accepted.
+test config.qtbase.libraries.zlib succeeded
+executing config test x86SimdAlways
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'SIMD=aesni avx avx2 avx512bw avx512cd avx512dq avx512er avx512f avx512ifma avx512pf avx512vbmi avx512vl f16c rdrnd shani sse2 sse3 sse4_1 sse4_2 ssse3' /home/issiki/ae/qt5/qtbase/config.tests/x86_simd
++ cd /home/issiki/ae/qt5/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC -DQT_COMPILER_SUPPORTS_AESNI -DQT_COMPILER_SUPPORTS_AVX -DQT_COMPILER_SUPPORTS_AVX2 -DQT_COMPILER_SUPPORTS_AVX512BW -DQT_COMPILER_SUPPORTS_AVX512CD -DQT_COMPILER_SUPPORTS_AVX512DQ -DQT_COMPILER_SUPPORTS_AVX512ER -DQT_COMPILER_SUPPORTS_AVX512F -DQT_COMPILER_SUPPORTS_AVX512IFMA -DQT_COMPILER_SUPPORTS_AVX512PF -DQT_COMPILER_SUPPORTS_AVX512VBMI -DQT_COMPILER_SUPPORTS_AVX512VL -DQT_COMPILER_SUPPORTS_F16C -DQT_COMPILER_SUPPORTS_RDRND -DQT_COMPILER_SUPPORTS_SHANI -DQT_COMPILER_SUPPORTS_SSE2 -DQT_COMPILER_SUPPORTS_SSE3 -DQT_COMPILER_SUPPORTS_SSE4_1 -DQT_COMPILER_SUPPORTS_SSE4_2 -DQT_COMPILER_SUPPORTS_SSSE3 -I/home/issiki/ae/qt5/qtbase/config.tests/x86_simd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.x86SimdAlways succeeded
+looking for library librt
+Trying source 0 (type inline) of library librt ...
++ cd /home/issiki/ae/qt5/config.tests/librt && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += librt' 'QMAKE_LIBS_LIBRT = ' /home/issiki/ae/qt5/config.tests/librt
++ cd /home/issiki/ae/qt5/config.tests/librt && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o librt main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.librt succeeded
+executing config test clock-monotonic
++ cd /home/issiki/ae/qt5/config.tests/clock-monotonic && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += librt' 'QMAKE_LIBS_LIBRT = ' /home/issiki/ae/qt5/config.tests/clock-monotonic
++ cd /home/issiki/ae/qt5/config.tests/clock-monotonic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o clock-monotonic main.o      
+test config.qtbase_corelib.tests.clock-monotonic succeeded
+executing config test cxx11_future
++ cd /home/issiki/ae/qt5/config.tests/cxx11_future && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/cxx11_future
++ cd /home/issiki/ae/qt5/config.tests/cxx11_future && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o cxx11_future main.o   -lpthread   
+test config.qtbase_corelib.tests.cxx11_future succeeded
+looking for library libdl
+Trying source 0 (type inline) of library libdl ...
++ cd /home/issiki/ae/qt5/config.tests/libdl && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libdl' 'QMAKE_LIBS_LIBDL = ' /home/issiki/ae/qt5/config.tests/libdl
++ cd /home/issiki/ae/qt5/config.tests/libdl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o libdl main.o      
+> main.o:main.cpp:function main: error: undefined reference to 'dlopen'
+> main.o:main.cpp:function main: error: undefined reference to 'dlclose'
+> main.o:main.cpp:function main: error: undefined reference to 'dlsym'
+> main.o:main.cpp:function main: error: undefined reference to 'dlerror'
+> collect2: error: ld returned 1 exit status
+> Makefile:67: recipe for target 'libdl' failed
+> make: *** [libdl] Error 1
+ => source failed verification.
+Trying source 1 (type inline) of library libdl ...
++ cd /home/issiki/ae/qt5/config.tests/libdl && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libdl' 'QMAKE_LIBS_LIBDL = /usr/lib/x86_64-linux-gnu/libdl.so' /home/issiki/ae/qt5/config.tests/libdl
++ cd /home/issiki/ae/qt5/config.tests/libdl && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o libdl main.o   /usr/lib/x86_64-linux-gnu/libdl.so   
+ => source accepted.
+test config.qtbase_corelib.libraries.libdl succeeded
+executing config test eventfd
++ cd /home/issiki/ae/qt5/config.tests/eventfd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/eventfd
++ cd /home/issiki/ae/qt5/config.tests/eventfd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o eventfd main.o      
+test config.qtbase_corelib.tests.eventfd succeeded
+executing config test futimens
++ cd /home/issiki/ae/qt5/config.tests/futimens && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/futimens
++ cd /home/issiki/ae/qt5/config.tests/futimens && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o futimens main.o      
+test config.qtbase_corelib.tests.futimens succeeded
+executing config test getauxval
++ cd /home/issiki/ae/qt5/config.tests/getauxval && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/getauxval
++ cd /home/issiki/ae/qt5/config.tests/getauxval && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o getauxval main.o      
+test config.qtbase_corelib.tests.getauxval succeeded
+executing config test getentropy
++ cd /home/issiki/ae/qt5/config.tests/getentropy && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/getentropy
++ cd /home/issiki/ae/qt5/config.tests/getentropy && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:8:39: error: ‘getentropy’ was not declared in this scope
+>      (void) getentropy(buf, sizeof(buf));
+>                                        ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_corelib.tests.getentropy FAILED
+looking for library glib
+Trying source 0 (type pkgConfig) of library glib ...
++ /usr/bin/pkg-config --exists --silence-errors glib-2.0 gthread-2.0
++ /usr/bin/pkg-config --modversion glib-2.0 gthread-2.0
+> 2.48.2
+> 2.48.2
++ /usr/bin/pkg-config --libs-only-L glib-2.0 gthread-2.0
++ /usr/bin/pkg-config --libs-only-l glib-2.0 gthread-2.0
+> -lgthread-2.0 -lglib-2.0
++ /usr/bin/pkg-config --cflags glib-2.0 gthread-2.0
+> -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+Note: Dropped compiler flags '-pthread'.
++ cd /home/issiki/ae/qt5/config.tests/glib && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += glib' 'QMAKE_LIBS_GLIB = /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_GLIB = /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' /home/issiki/ae/qt5/config.tests/glib
++ cd /home/issiki/ae/qt5/config.tests/glib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o glib main.o   /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+ => source accepted.
+test config.qtbase_corelib.libraries.glib succeeded
+executing config test glibc
++ cd /home/issiki/ae/qt5/config.tests/glibc && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/glibc
++ cd /home/issiki/ae/qt5/config.tests/glibc && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o glibc main.o      
+test config.qtbase_corelib.tests.glibc succeeded
+looking for library posix_iconv
+Trying source 0 (type inline) of library posix_iconv ...
+  => source failed condition 'config.openbsd || config.haiku'.
+Trying source 1 (type inline) of library posix_iconv ...
++ cd /home/issiki/ae/qt5/config.tests/posix_iconv && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += posix_iconv' 'QMAKE_LIBS_POSIX_ICONV = ' /home/issiki/ae/qt5/config.tests/posix_iconv
++ cd /home/issiki/ae/qt5/config.tests/posix_iconv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o posix_iconv main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.posix_iconv succeeded
+looking for library icu
+Trying source 0 (type inline) of library icu ...
+  => source failed condition 'config.win32 && !features.shared'.
+Trying source 1 (type inline) of library icu ...
+  => source failed condition 'config.win32 && features.shared'.
+Trying source 2 (type inline) of library icu ...
++ cd /home/issiki/ae/qt5/config.tests/icu && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += icu' 'QMAKE_LIBS_ICU = /usr/lib/x86_64-linux-gnu/libicui18n.so /usr/lib/x86_64-linux-gnu/libicuuc.so /usr/lib/x86_64-linux-gnu/libicudata.so' 'QMAKE_DEPENDS_ICU_CC = LIBDL' 'QMAKE_DEPENDS_ICU_LD = LIBDL' 'QMAKE_LIBS_LIBDL = /usr/lib/x86_64-linux-gnu/libdl.so' /home/issiki/ae/qt5/config.tests/icu
++ cd /home/issiki/ae/qt5/config.tests/icu && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o icu main.o   /usr/lib/x86_64-linux-gnu/libicui18n.so /usr/lib/x86_64-linux-gnu/libicuuc.so /usr/lib/x86_64-linux-gnu/libicudata.so /usr/lib/x86_64-linux-gnu/libdl.so   
+ => source accepted.
+test config.qtbase_corelib.libraries.icu succeeded
+executing config test inotify
++ cd /home/issiki/ae/qt5/config.tests/inotify && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/inotify
++ cd /home/issiki/ae/qt5/config.tests/inotify && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o inotify main.o      
+test config.qtbase_corelib.tests.inotify succeeded
+executing config test ipc_sysv
++ cd /home/issiki/ae/qt5/config.tests/ipc_sysv && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/ipc_sysv
++ cd /home/issiki/ae/qt5/config.tests/ipc_sysv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o ipc_sysv main.o      
+test config.qtbase_corelib.tests.ipc_sysv succeeded
+executing config test linkat
++ cd /home/issiki/ae/qt5/config.tests/linkat && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/linkat
++ cd /home/issiki/ae/qt5/config.tests/linkat && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o linkat main.o      
+test config.qtbase_corelib.tests.linkat succeeded
+executing config test ppoll
++ cd /home/issiki/ae/qt5/config.tests/ppoll && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/ppoll
++ cd /home/issiki/ae/qt5/config.tests/ppoll && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o ppoll main.o      
+test config.qtbase_corelib.tests.ppoll succeeded
+executing config test renameat2
++ cd /home/issiki/ae/qt5/config.tests/renameat2 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/renameat2
++ cd /home/issiki/ae/qt5/config.tests/renameat2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:9:53: error: ‘RENAME_NOREPLACE’ was not declared in this scope
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>                                                      ^
+> main.cpp:9:72: error: ‘RENAME_WHITEOUT’ was not declared in this scope
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>                                                                         ^
+> main.cpp:9:87: error: ‘renameat2’ was not declared in this scope
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>                                                                                        ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_corelib.tests.renameat2 FAILED
+looking for library slog2
+Trying source 0 (type inline) of library slog2 ...
+None of [libslog2.so libslog2.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_corelib.libraries.slog2 FAILED
+executing config test statx
++ cd /home/issiki/ae/qt5/config.tests/statx && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/statx
++ cd /home/issiki/ae/qt5/config.tests/statx && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:11:18: error: aggregate ‘main(int, char**)::statx statxbuf’ has incomplete type and cannot be defined
+>      struct statx statxbuf;
+>                   ^
+> main.cpp:12:25: error: ‘STATX_BASIC_STATS’ was not declared in this scope
+>      unsigned int mask = STATX_BASIC_STATS;
+>                          ^
+> main.cpp:13:32: error: ‘AT_STATX_SYNC_AS_STAT’ was not declared in this scope
+>      return statx(AT_FDCWD, "", AT_STATX_SYNC_AS_STAT, mask, &statxbuf);
+>                                 ^
+> main.cpp:13:70: error: invalid use of incomplete type ‘struct main(int, char**)::statx’
+>      return statx(AT_FDCWD, "", AT_STATX_SYNC_AS_STAT, mask, &statxbuf);
+>                                                                       ^
+> main.cpp:11:12: note: forward declaration of ‘struct main(int, char**)::statx’
+>      struct statx statxbuf;
+>             ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_corelib.tests.statx FAILED
+looking for library libatomic
+Trying source 0 (type inline) of library libatomic ...
++ cd /home/issiki/ae/qt5/config.tests/libatomic && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libatomic' 'QMAKE_LIBS_LIBATOMIC = ' /home/issiki/ae/qt5/config.tests/libatomic
++ cd /home/issiki/ae/qt5/config.tests/libatomic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o libatomic main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.libatomic succeeded
+looking for library doubleconversion
+Trying source 0 (type inline) of library doubleconversion ...
+None of [libdouble-conversion.so libdouble-conversion.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_corelib.libraries.doubleconversion FAILED
+looking for library pcre2
+Trying source 0 (type pkgConfig) of library pcre2 ...
++ /usr/bin/pkg-config --exists --silence-errors libpcre2-16
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library pcre2 ...
+None of [libpcre2-16.so libpcre2-16.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_corelib.libraries.pcre2 FAILED
+executing config test cloexec
++ cd /home/issiki/ae/qt5/config.tests/cloexec && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/cloexec
++ cd /home/issiki/ae/qt5/config.tests/cloexec && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o cloexec main.o      
+test config.qtbase_corelib.tests.cloexec succeeded
+executing config test cxx11_random
++ cd /home/issiki/ae/qt5/config.tests/cxx11_random && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/cxx11_random
++ cd /home/issiki/ae/qt5/config.tests/cxx11_random && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o cxx11_random main.o      
+test config.qtbase_corelib.tests.cxx11_random succeeded
+executing config test atomicfptr
++ cd /home/issiki/ae/qt5/config.tests/atomicfptr && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/atomicfptr
++ cd /home/issiki/ae/qt5/config.tests/atomicfptr && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o atomicfptr main.o      
+test config.qtbase_corelib.tests.atomicfptr succeeded
+looking for library openssl_headers
+Trying source 0 (type inline) of library openssl_headers ...
++ cd /home/issiki/ae/qt5/config.tests/openssl_headers && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /home/issiki/ae/qt5/config.tests/openssl_headers
++ cd /home/issiki/ae/qt5/config.tests/openssl_headers && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o openssl_headers main.o      
+ => source accepted.
+test config.qtbase_network.libraries.openssl_headers succeeded
+executing config test dtls
++ cd /home/issiki/ae/qt5/config.tests/dtls && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /home/issiki/ae/qt5/config.tests/dtls
++ cd /home/issiki/ae/qt5/config.tests/dtls && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o dtls main.o      
+test config.qtbase_network.tests.dtls succeeded
+Trying source 0 (type makeSpec) of library network ...
+ => source accepted.
+executing config test getifaddrs
++ cd /home/issiki/ae/qt5/config.tests/getifaddrs && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += network' 'QMAKE_LIBS_NETWORK = ' /home/issiki/ae/qt5/config.tests/getifaddrs
++ cd /home/issiki/ae/qt5/config.tests/getifaddrs && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o getifaddrs main.o      
+test config.qtbase_network.tests.getifaddrs succeeded
+executing config test ipv6ifname
++ cd /home/issiki/ae/qt5/config.tests/ipv6ifname && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += network' 'QMAKE_LIBS_NETWORK = ' /home/issiki/ae/qt5/config.tests/ipv6ifname
++ cd /home/issiki/ae/qt5/config.tests/ipv6ifname && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o ipv6ifname main.o      
+test config.qtbase_network.tests.ipv6ifname succeeded
+executing config test linux-netlink
++ cd /home/issiki/ae/qt5/config.tests/linux-netlink && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/linux-netlink
++ cd /home/issiki/ae/qt5/config.tests/linux-netlink && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o linux-netlink main.o      
+test config.qtbase_network.tests.linux-netlink succeeded
+executing config test openssl11
++ cd /home/issiki/ae/qt5/config.tests/openssl11 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /home/issiki/ae/qt5/config.tests/openssl11
++ cd /home/issiki/ae/qt5/config.tests/openssl11 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:4:4: error: #error OpenSSL >= 1.1 is required
+>  #  error OpenSSL >= 1.1 is required
+>     ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_network.tests.openssl11 FAILED
+looking for library xkbcommon
+Trying source 0 (type pkgConfig) of library xkbcommon ...
++ /usr/bin/pkg-config --exists --silence-errors xkbcommon '>=' 0.5.0
++ /usr/bin/pkg-config --modversion xkbcommon '>=' 0.5.0
+> 0.5.0
++ /usr/bin/pkg-config --libs-only-L xkbcommon '>=' 0.5.0
++ /usr/bin/pkg-config --libs-only-l xkbcommon '>=' 0.5.0
+> -lxkbcommon
++ /usr/bin/pkg-config --cflags xkbcommon '>=' 0.5.0
++ cd /home/issiki/ae/qt5/config.tests/xkbcommon && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xkbcommon' 'QMAKE_LIBS_XKBCOMMON = /usr/lib/x86_64-linux-gnu/libxkbcommon.so' /home/issiki/ae/qt5/config.tests/xkbcommon
++ cd /home/issiki/ae/qt5/config.tests/xkbcommon && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xkbcommon main.o   /usr/lib/x86_64-linux-gnu/libxkbcommon.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xkbcommon succeeded
+looking for library xcb
+Trying source 0 (type pkgConfig) of library xcb ...
++ /usr/bin/pkg-config --exists --silence-errors xcb '>=' 1.9
++ /usr/bin/pkg-config --modversion xcb '>=' 1.9
+> 1.11.1
++ /usr/bin/pkg-config --libs-only-L xcb '>=' 1.9
++ /usr/bin/pkg-config --libs-only-l xcb '>=' 1.9
+> -lxcb
++ /usr/bin/pkg-config --cflags xcb '>=' 1.9
++ cd /home/issiki/ae/qt5/config.tests/xcb && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xcb' 'QMAKE_LIBS_XCB = /usr/lib/x86_64-linux-gnu/libxcb.so' /home/issiki/ae/qt5/config.tests/xcb
++ cd /home/issiki/ae/qt5/config.tests/xcb && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xcb main.o   /usr/lib/x86_64-linux-gnu/libxcb.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb succeeded
+looking for library atspi
+Trying source 0 (type pkgConfig) of library atspi ...
++ /usr/bin/pkg-config --exists --silence-errors atspi-2
++ /usr/bin/pkg-config --modversion atspi-2
+> 2.18.3
++ /usr/bin/pkg-config --libs-only-L atspi-2
++ /usr/bin/pkg-config --libs-only-l atspi-2
+> -latspi -ldbus-1 -lglib-2.0
++ /usr/bin/pkg-config --cflags atspi-2
+> -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+ => source accepted.
+test config.qtbase_gui.libraries.atspi succeeded
+looking for library opengl
+Trying source 0 (type pkgConfig) of library opengl ...
++ /usr/bin/pkg-config --exists --silence-errors gl
++ /usr/bin/pkg-config --modversion gl
+> 18.0.5
++ /usr/bin/pkg-config --libs-only-L gl
++ /usr/bin/pkg-config --libs-only-l gl
+> -lGL
++ /usr/bin/pkg-config --cflags gl
+> -I/usr/include/libdrm
+header entry 'config.qtbase_gui.libraries.opengl.headers.0' passed condition.
+header entry 'config.qtbase_gui.libraries.opengl.headers.0' passed condition.
++ cd /home/issiki/ae/qt5/config.tests/opengl && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += opengl' 'QMAKE_LIBS_OPENGL = /usr/lib/x86_64-linux-gnu/libGL.so' 'QMAKE_INCDIR_OPENGL = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/opengl
++ cd /home/issiki/ae/qt5/config.tests/opengl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o opengl main.o   /usr/lib/x86_64-linux-gnu/libGL.so   
+ => source accepted.
+test config.qtbase_gui.libraries.opengl succeeded
+looking for library drm
+Trying source 0 (type pkgConfig) of library drm ...
++ /usr/bin/pkg-config --exists --silence-errors libdrm
++ /usr/bin/pkg-config --modversion libdrm
+> 2.4.91
++ /usr/bin/pkg-config --libs-only-L libdrm
++ /usr/bin/pkg-config --libs-only-l libdrm
+> -ldrm
++ /usr/bin/pkg-config --cflags libdrm
+> -I/usr/include/libdrm
++ cd /home/issiki/ae/qt5/config.tests/drm && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += drm' 'QMAKE_LIBS_DRM = /usr/lib/x86_64-linux-gnu/libdrm.so' 'QMAKE_INCDIR_DRM = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/drm
++ cd /home/issiki/ae/qt5/config.tests/drm && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o drm main.o   /usr/lib/x86_64-linux-gnu/libdrm.so   
+ => source accepted.
+test config.qtbase_gui.libraries.drm succeeded
+executing config test drm_atomic
++ cd /home/issiki/ae/qt5/config.tests/drm_atomic && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += drm' 'QMAKE_LIBS_DRM = /usr/lib/x86_64-linux-gnu/libdrm.so' 'QMAKE_INCDIR_DRM = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/drm_atomic
++ cd /home/issiki/ae/qt5/config.tests/drm_atomic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o drm_atomic main.o   /usr/lib/x86_64-linux-gnu/libdrm.so   
+test config.qtbase_gui.tests.drm_atomic succeeded
+looking for library egl
+Trying source 0 (type pkgConfig) of library egl ...
++ /usr/bin/pkg-config --exists --silence-errors egl
++ /usr/bin/pkg-config --modversion egl
+> 18.0.5
++ /usr/bin/pkg-config --libs-only-L egl
++ /usr/bin/pkg-config --libs-only-l egl
+> -lEGL
++ /usr/bin/pkg-config --cflags egl
+> -I/usr/include/libdrm
++ cd /home/issiki/ae/qt5/config.tests/egl && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/egl
++ cd /home/issiki/ae/qt5/config.tests/egl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o egl main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+ => source accepted.
+test config.qtbase_gui.libraries.egl succeeded
+looking for library xlib
+Trying source 0 (type makeSpec) of library xlib ...
++ cd /home/issiki/ae/qt5/config.tests/xlib && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xlib' 'QMAKE_LIBS_XLIB = /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so' /home/issiki/ae/qt5/config.tests/xlib
++ cd /home/issiki/ae/qt5/config.tests/xlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xlib main.o   /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xlib succeeded
+executing config test egl-x11
++ cd /home/issiki/ae/qt5/config.tests/egl-x11 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl xlib' 'QMAKE_LIBS_XLIB = /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/egl-x11
++ cd /home/issiki/ae/qt5/config.tests/egl-x11 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o egl-x11 main.o   /usr/lib/x86_64-linux-gnu/libEGL.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so   
+test config.qtbase_gui.tests.egl-x11 succeeded
+Trying source 0 (type makeSpec) of library bcm_host ...
+bcm_host.h not found in [] and global paths.
+  => source produced no result.
+executing config test egl-egldevice
++ cd /home/issiki/ae/qt5/config.tests/egl-egldevice && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/egl-egldevice
++ cd /home/issiki/ae/qt5/config.tests/egl-egldevice && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o egl-egldevice main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+test config.qtbase_gui.tests.egl-egldevice succeeded
+looking for library gbm
+Trying source 0 (type pkgConfig) of library gbm ...
++ /usr/bin/pkg-config --exists --silence-errors gbm
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_gui.libraries.gbm FAILED
+executing config test egl-mali
++ cd /home/issiki/ae/qt5/config.tests/egl-mali && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/egl-mali
++ cd /home/issiki/ae/qt5/config.tests/egl-mali && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:2:30: fatal error: EGL/fbdev_window.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_gui.tests.egl-mali FAILED
+executing config test egl-mali-2
++ cd /home/issiki/ae/qt5/config.tests/egl-mali-2 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/egl-mali-2
++ cd /home/issiki/ae/qt5/config.tests/egl-mali-2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:8:5: error: ‘mali_native_window’ was not declared in this scope
+>      mali_native_window *w = 0;
+>      ^
+> main.cpp:8:25: error: ‘w’ was not declared in this scope
+>      mali_native_window *w = 0;
+>                          ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_gui.tests.egl-mali-2 FAILED
+executing config test egl-viv
++ cd /home/issiki/ae/qt5/config.tests/egl-viv && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/config.tests/egl-viv
++ cd /home/issiki/ae/qt5/config.tests/egl-viv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC -DEGL_API_FB=1 -DLINUX=1 -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:3:28: fatal error: EGL/eglvivante.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_gui.tests.egl-viv FAILED
+looking for library xcb_xlib
+Trying source 0 (type pkgConfig) of library xcb_xlib ...
++ /usr/bin/pkg-config --exists --silence-errors x11-xcb
++ /usr/bin/pkg-config --modversion x11-xcb
+> 1.6.3
++ /usr/bin/pkg-config --libs-only-L x11-xcb
++ /usr/bin/pkg-config --libs-only-l x11-xcb
+> -lX11-xcb -lX11 -lxcb
++ /usr/bin/pkg-config --cflags x11-xcb
++ cd /home/issiki/ae/qt5/config.tests/xcb_xlib && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xcb_xlib' 'QMAKE_LIBS_XCB_XLIB = /usr/lib/x86_64-linux-gnu/libX11-xcb.so' 'QMAKE_DEPENDS_XCB_XLIB_CC = XCB XLIB' 'QMAKE_DEPENDS_XCB_XLIB_LD = XCB XLIB' 'QMAKE_LIBS_XLIB = /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so' 'QMAKE_LIBS_XCB = /usr/lib/x86_64-linux-gnu/libxcb.so' /home/issiki/ae/qt5/config.tests/xcb_xlib
++ cd /home/issiki/ae/qt5/config.tests/xcb_xlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xcb_xlib main.o   /usr/lib/x86_64-linux-gnu/libX11-xcb.so /usr/lib/x86_64-linux-gnu/libxcb.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_xlib succeeded
+executing config test evdev
++ cd /home/issiki/ae/qt5/config.tests/evdev && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/evdev
++ cd /home/issiki/ae/qt5/config.tests/evdev && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o evdev main.o      
+test config.qtbase_gui.tests.evdev succeeded
+looking for library freetype
+Trying source 0 (type pkgConfig) of library freetype ...
++ /usr/bin/pkg-config --exists --silence-errors freetype2
++ /usr/bin/pkg-config --modversion freetype2
+> 18.1.12
++ /usr/bin/pkg-config --libs-only-L freetype2
++ /usr/bin/pkg-config --libs-only-l freetype2
+> -lfreetype
++ /usr/bin/pkg-config --cflags freetype2
+> -I/usr/include/freetype2
++ cd /home/issiki/ae/qt5/config.tests/freetype && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += freetype' 'QMAKE_LIBS_FREETYPE = /usr/lib/x86_64-linux-gnu/libfreetype.so' 'QMAKE_INCDIR_FREETYPE = /usr/include/freetype2' 'QMAKE_DEPENDS_FREETYPE_CC = ZLIB' 'QMAKE_DEPENDS_FREETYPE_LD = ZLIB' 'QMAKE_LIBS_ZLIB = /usr/lib/x86_64-linux-gnu/libz.so' /home/issiki/ae/qt5/config.tests/freetype
++ cd /home/issiki/ae/qt5/config.tests/freetype && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/freetype2 -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o freetype main.o   /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib/x86_64-linux-gnu/libz.so   
+ => source accepted.
+test config.qtbase_gui.libraries.freetype succeeded
+looking for library fontconfig
+Trying source 0 (type pkgConfig) of library fontconfig ...
++ /usr/bin/pkg-config --exists --silence-errors fontconfig
++ /usr/bin/pkg-config --modversion fontconfig
+> 2.11.94
++ /usr/bin/pkg-config --libs-only-L fontconfig
++ /usr/bin/pkg-config --libs-only-l fontconfig
+> -lfontconfig -lfreetype
++ /usr/bin/pkg-config --cflags fontconfig
+> -I/usr/include/freetype2
++ cd /home/issiki/ae/qt5/config.tests/fontconfig && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += fontconfig' 'QMAKE_LIBS_FONTCONFIG = /usr/lib/x86_64-linux-gnu/libfontconfig.so' 'QMAKE_DEPENDS_FONTCONFIG_CC = FREETYPE' 'QMAKE_DEPENDS_FONTCONFIG_LD = FREETYPE' 'QMAKE_LIBS_FREETYPE = /usr/lib/x86_64-linux-gnu/libfreetype.so' 'QMAKE_INCDIR_FREETYPE = /usr/include/freetype2' 'QMAKE_DEPENDS_FREETYPE_CC = ZLIB' 'QMAKE_DEPENDS_FREETYPE_LD = ZLIB' 'QMAKE_LIBS_ZLIB = /usr/lib/x86_64-linux-gnu/libz.so' /home/issiki/ae/qt5/config.tests/fontconfig
++ cd /home/issiki/ae/qt5/config.tests/fontconfig && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/freetype2 -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o fontconfig main.o   /usr/lib/x86_64-linux-gnu/libfontconfig.so /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib/x86_64-linux-gnu/libz.so   
+ => source accepted.
+test config.qtbase_gui.libraries.fontconfig succeeded
+looking for library libinput
+Trying source 0 (type pkgConfig) of library libinput ...
++ /usr/bin/pkg-config --exists --silence-errors libinput
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_gui.libraries.libinput FAILED
+executing config test linuxfb
++ cd /home/issiki/ae/qt5/config.tests/linuxfb && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/config.tests/linuxfb
++ cd /home/issiki/ae/qt5/config.tests/linuxfb && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o linuxfb main.o      
+test config.qtbase_gui.tests.linuxfb succeeded
+looking for library mtdev
+Trying source 0 (type pkgConfig) of library mtdev ...
++ /usr/bin/pkg-config --exists --silence-errors mtdev
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_gui.libraries.mtdev FAILED
+looking for library openvg
+Trying source 0 (type pkgConfig) of library openvg ...
++ /usr/bin/pkg-config --exists --silence-errors vg
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type makeSpec) of library openvg ...
+None of [libOpenVG.so libOpenVG.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.openvg FAILED
+executing config test qpa_default_platform
+test config.qtbase_gui.tests.qpa_default_platform gave result xcb
+looking for library harfbuzz
+Trying source 0 (type inline) of library harfbuzz ...
++ cd /home/issiki/ae/qt5/config.tests/harfbuzz && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += harfbuzz' 'QMAKE_LIBS_HARFBUZZ = /usr/lib/x86_64-linux-gnu/libharfbuzz.so' /home/issiki/ae/qt5/config.tests/harfbuzz
++ cd /home/issiki/ae/qt5/config.tests/harfbuzz && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:4:4: error: #error This version of harfbuzz is too old.
+>  #  error This version of harfbuzz is too old.
+>     ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+ => source failed verification.
+test config.qtbase_gui.libraries.harfbuzz FAILED
+looking for library libjpeg
+Trying source 0 (type inline) of library libjpeg ...
+  => source failed condition 'config.msvc'.
+Trying source 1 (type inline) of library libjpeg ...
++ cd /home/issiki/ae/qt5/config.tests/libjpeg && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libjpeg' 'QMAKE_LIBS_LIBJPEG = /usr/lib/x86_64-linux-gnu/libjpeg.so' /home/issiki/ae/qt5/config.tests/libjpeg
++ cd /home/issiki/ae/qt5/config.tests/libjpeg && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o libjpeg main.o   /usr/lib/x86_64-linux-gnu/libjpeg.so   
+ => source accepted.
+test config.qtbase_gui.libraries.libjpeg succeeded
+looking for library libpng
+Trying source 0 (type pkgConfig) of library libpng ...
++ /usr/bin/pkg-config --exists --silence-errors libpng
++ /usr/bin/pkg-config --modversion libpng
+> 1.2.54
++ /usr/bin/pkg-config --libs-only-L libpng
++ /usr/bin/pkg-config --libs-only-l libpng
+> -lpng12
++ /usr/bin/pkg-config --cflags libpng
+> -I/usr/include/libpng12
++ cd /home/issiki/ae/qt5/config.tests/libpng && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libpng' 'QMAKE_LIBS_LIBPNG = /usr/lib/x86_64-linux-gnu/libpng12.so' 'QMAKE_INCDIR_LIBPNG = /usr/include/libpng12' 'QMAKE_DEPENDS_LIBPNG_CC = ZLIB' 'QMAKE_DEPENDS_LIBPNG_LD = ZLIB' 'QMAKE_LIBS_ZLIB = /usr/lib/x86_64-linux-gnu/libz.so' /home/issiki/ae/qt5/config.tests/libpng
++ cd /home/issiki/ae/qt5/config.tests/libpng && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/libpng12 -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o libpng main.o   /usr/lib/x86_64-linux-gnu/libpng12.so /usr/lib/x86_64-linux-gnu/libz.so   
+ => source accepted.
+test config.qtbase_gui.libraries.libpng succeeded
+looking for library xcb_icccm
+Trying source 0 (type pkgConfig) of library xcb_icccm ...
++ /usr/bin/pkg-config --exists --silence-errors xcb-icccm '>=' 0.3.9
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xcb_icccm ...
+None of [libxcb-icccm.so libxcb-icccm.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.xcb_icccm FAILED
+looking for library tslib
+Trying source 0 (type inline) of library tslib ...
+None of [libts.so libts.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.tslib FAILED
+looking for library vulkan
+Trying source 0 (type pkgConfig) of library vulkan ...
++ /usr/bin/pkg-config --exists --silence-errors vulkan
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type makeSpec) of library vulkan ...
+vulkan/vulkan.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.vulkan FAILED
+executing config test x11prefix
++ /usr/bin/pkg-config --exists --silence-errors x11
++ /usr/bin/pkg-config --variable=prefix x11
+> /usr
+test config.qtbase_gui.tests.x11prefix gave result /usr
+looking for library xcb_glx
+Trying source 0 (type pkgConfig) of library xcb_glx ...
++ /usr/bin/pkg-config --exists --silence-errors xcb-glx
++ /usr/bin/pkg-config --modversion xcb-glx
+> 1.11.1
++ /usr/bin/pkg-config --libs-only-L xcb-glx
++ /usr/bin/pkg-config --libs-only-l xcb-glx
+> -lxcb-glx -lxcb
++ /usr/bin/pkg-config --cflags xcb-glx
++ cd /home/issiki/ae/qt5/config.tests/xcb_glx && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xcb_glx' 'QMAKE_LIBS_XCB_GLX = /usr/lib/x86_64-linux-gnu/libxcb-glx.so' 'QMAKE_DEPENDS_XCB_GLX_CC = XCB' 'QMAKE_DEPENDS_XCB_GLX_LD = XCB' 'QMAKE_LIBS_XCB = /usr/lib/x86_64-linux-gnu/libxcb.so' /home/issiki/ae/qt5/config.tests/xcb_glx
++ cd /home/issiki/ae/qt5/config.tests/xcb_glx && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xcb_glx main.o   /usr/lib/x86_64-linux-gnu/libxcb-glx.so /usr/lib/x86_64-linux-gnu/libxcb.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_glx succeeded
+looking for library xrender
+Trying source 0 (type inline) of library xrender ...
++ cd /home/issiki/ae/qt5/config.tests/xrender && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xrender' 'QMAKE_LIBS_XRENDER = /usr/lib/x86_64-linux-gnu/libXrender.so' 'QMAKE_DEPENDS_XRENDER_CC = XLIB' 'QMAKE_DEPENDS_XRENDER_LD = XLIB' 'QMAKE_LIBS_XLIB = /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so' /home/issiki/ae/qt5/config.tests/xrender
++ cd /home/issiki/ae/qt5/config.tests/xrender && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xrender main.o   /usr/lib/x86_64-linux-gnu/libXrender.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xrender succeeded
+looking for library x11sm
+Trying source 0 (type pkgConfig) of library x11sm ...
++ /usr/bin/pkg-config --exists --silence-errors sm ice
++ /usr/bin/pkg-config --modversion sm ice
+> 1.2.2
+> 1.0.9
++ /usr/bin/pkg-config --libs-only-L sm ice
++ /usr/bin/pkg-config --libs-only-l sm ice
+> -lSM -lICE
++ /usr/bin/pkg-config --cflags sm ice
+ => source accepted.
+test config.qtbase_gui.libraries.x11sm succeeded
+looking for library xkbcommon_x11
+Trying source 0 (type pkgConfig) of library xkbcommon_x11 ...
++ /usr/bin/pkg-config --exists --silence-errors xkbcommon-x11
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xkbcommon_x11 ...
+None of [libxkbcommon-x11.so libxkbcommon-x11.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.xkbcommon_x11 FAILED
+looking for library gtk3
+Trying source 0 (type pkgConfig) of library gtk3 ...
++ /usr/bin/pkg-config --exists --silence-errors gtk+-3.0 '>=' 3.6
++ /usr/bin/pkg-config --modversion gtk+-3.0 '>=' 3.6
+> 3.18.9
++ /usr/bin/pkg-config --libs-only-L gtk+-3.0 '>=' 3.6
++ /usr/bin/pkg-config --libs-only-l gtk+-3.0 '>=' 3.6
+> -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
++ /usr/bin/pkg-config --cflags gtk+-3.0 '>=' 3.6
+> -pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/mirclient -I/usr/include/mircore -I/usr/include/mircookie -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+Note: Dropped compiler flags '-pthread'.
+ => source accepted.
+test config.qtbase_widgets.libraries.gtk3 succeeded
+looking for library cups
+Trying source 0 (type inline) of library cups ...
+None of [libcups.so libcups.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_printsupport.libraries.cups FAILED
+looking for library db2
+Trying source 0 (type inline) of library db2 ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library db2 ...
+None of [libdb2.so libdb2.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.db2 FAILED
+looking for library ibase
+Trying source 0 (type inline) of library ibase ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library ibase ...
+None of [libgds.so libgds.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.ibase FAILED
+looking for library mysql
+Trying source 0 (type mysqlConfig) of library mysql ...
++ /usr/bin/mysql_config --version
+> 5.7.27
++ /usr/bin/mysql_config --libs_r
+> -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl
++ /usr/bin/mysql_config --include
+> -I/usr/include/mysql
++ cd /home/issiki/ae/qt5/config.tests/mysql && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += mysql' 'QMAKE_LIBS_MYSQL = /usr/lib/x86_64-linux-gnu/libmysqlclient.so' 'QMAKE_INCDIR_MYSQL = /usr/include/mysql' /home/issiki/ae/qt5/config.tests/mysql
++ cd /home/issiki/ae/qt5/config.tests/mysql && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/mysql -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o mysql main.o   /usr/lib/x86_64-linux-gnu/libmysqlclient.so   
+ => source accepted.
+test config.qtbase_sqldrivers.libraries.mysql succeeded
+looking for library oci
+Trying source 0 (type inline) of library oci ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library oci ...
+None of [libclntsh.so libclntsh.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.oci FAILED
+looking for library odbc
+Trying source 0 (type inline) of library odbc ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library odbc ...
+  => source failed condition 'config.darwin'.
+Trying source 2 (type inline) of library odbc ...
++ cd /home/issiki/ae/qt5/config.tests/odbc && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += odbc' 'QMAKE_LIBS_ODBC = /usr/lib/x86_64-linux-gnu/libodbc.so' /home/issiki/ae/qt5/config.tests/odbc
++ cd /home/issiki/ae/qt5/config.tests/odbc && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o odbc main.o   /usr/lib/x86_64-linux-gnu/libodbc.so   
+ => source accepted.
+test config.qtbase_sqldrivers.libraries.odbc succeeded
+looking for library psql
+Trying source 0 (type pkgConfig) of library psql ...
++ /usr/bin/pkg-config --exists --silence-errors libpq
++ /usr/bin/pkg-config --modversion libpq
+> 9.5.19
++ /usr/bin/pkg-config --libs-only-L libpq
++ /usr/bin/pkg-config --libs-only-l libpq
+> -lpq
++ /usr/bin/pkg-config --cflags libpq
+> -I/usr/include/postgresql
++ cd /home/issiki/ae/qt5/config.tests/psql && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += psql' 'QMAKE_LIBS_PSQL = /usr/lib/x86_64-linux-gnu/libpq.so' 'QMAKE_INCDIR_PSQL = /usr/include/postgresql' /home/issiki/ae/qt5/config.tests/psql
++ cd /home/issiki/ae/qt5/config.tests/psql && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/postgresql -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o psql main.o   /usr/lib/x86_64-linux-gnu/libpq.so   
+ => source accepted.
+test config.qtbase_sqldrivers.libraries.psql succeeded
+looking for library sqlite2
+Trying source 0 (type inline) of library sqlite2 ...
+None of [libsqlite.so libsqlite.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.sqlite2 FAILED
+looking for library tds
+Trying source 0 (type sybaseEnv) of library tds ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type sybaseEnv) of library tds ...
+None of [libsybdb.so libsybdb.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.tds FAILED
+executing config test socketcan
++ cd /home/issiki/ae/qt5/config.tests/socketcan && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtserialbus/config.tests/socketcan
++ cd /home/issiki/ae/qt5/config.tests/socketcan && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtserialbus/config.tests/socketcan -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtserialbus/config.tests/socketcan/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o socketcan main.o      
+test config.qtserialbus_serialbus.tests.socketcan succeeded
+executing config test socketcan_fd
++ cd /home/issiki/ae/qt5/config.tests/socketcan_fd && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtserialbus/config.tests/socketcan_fd
++ cd /home/issiki/ae/qt5/config.tests/socketcan_fd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtserialbus/config.tests/socketcan_fd -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtserialbus/config.tests/socketcan_fd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o socketcan_fd main.o      
+test config.qtserialbus_serialbus.tests.socketcan_fd succeeded
+looking for library jasper
+Trying source 0 (type inline) of library jasper ...
++ cd /home/issiki/ae/qt5/config.tests/jasper && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += jasper' 'QMAKE_LIBS_JASPER = /usr/lib/x86_64-linux-gnu/libjasper.so' /home/issiki/ae/qt5/config.tests/jasper
++ cd /home/issiki/ae/qt5/config.tests/jasper && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o jasper main.o   /usr/lib/x86_64-linux-gnu/libjasper.so   
+ => source accepted.
+test config.qtimageformats_imageformats.libraries.jasper succeeded
+looking for library mng
+Trying source 0 (type inline) of library mng ...
+None of [libmng.so libmng.a] found in [] and global paths.
+  => source produced no result.
+test config.qtimageformats_imageformats.libraries.mng FAILED
+looking for library tiff
+Trying source 0 (type inline) of library tiff ...
++ cd /home/issiki/ae/qt5/config.tests/tiff && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += tiff' 'QMAKE_LIBS_TIFF = /usr/lib/x86_64-linux-gnu/libtiff.so' /home/issiki/ae/qt5/config.tests/tiff
++ cd /home/issiki/ae/qt5/config.tests/tiff && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o tiff main.o   /usr/lib/x86_64-linux-gnu/libtiff.so   
+ => source accepted.
+test config.qtimageformats_imageformats.libraries.tiff succeeded
+looking for library webp
+Trying source 0 (type inline) of library webp ...
++ cd /home/issiki/ae/qt5/config.tests/webp && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += webp' 'QMAKE_LIBS_WEBP = /usr/lib/x86_64-linux-gnu/libwebp.so /usr/lib/x86_64-linux-gnu/libwebpdemux.so' /home/issiki/ae/qt5/config.tests/webp
++ cd /home/issiki/ae/qt5/config.tests/webp && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o webp main.o   /usr/lib/x86_64-linux-gnu/libwebp.so /usr/lib/x86_64-linux-gnu/libwebpdemux.so   
+ => source accepted.
+test config.qtimageformats_imageformats.libraries.webp succeeded
+executing config test d3d12
++ cd /home/issiki/ae/qt5/config.tests/d3d12 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtdeclarative/config.tests/d3d12
++ cd /home/issiki/ae/qt5/config.tests/d3d12 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtdeclarative/config.tests/d3d12 -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o d3d12.o /home/issiki/ae/qt5/qtdeclarative/config.tests/d3d12/d3d12.cpp
+> /home/issiki/ae/qt5/qtdeclarative/config.tests/d3d12/d3d12.cpp:40:19: fatal error: d3d12.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'd3d12.o' failed
+> make: *** [d3d12.o] Error 1
+test config.qtdeclarative_quick.tests.d3d12 FAILED
+looking for library sdl2
+Trying source 0 (type pkgConfig) of library sdl2 ...
++ /usr/bin/pkg-config --exists --silence-errors sdl2
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library sdl2 ...
+  => source failed condition 'config.darwin'.
+Trying source 2 (type inline) of library sdl2 ...
+  => source failed condition 'config.win32'.
+Trying source 3 (type inline) of library sdl2 ...
+None of [libSDL2.so libSDL2.a] found in [] and global paths.
+  => source produced no result.
+test config.qtgamepad_gamepad.libraries.sdl2 FAILED
+looking for library assimp
+Trying source 0 (type pkgConfig) of library assimp ...
++ /usr/bin/pkg-config --exists --silence-errors assimp '>' 3.3.1
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library assimp ...
+None of [libassimp.so libassimp.a] found in [] and global paths.
+  => source produced no result.
+test config.qt3d_core.libraries.assimp FAILED
+looking for library fbx
+Trying source 0 (type fbx) of library fbx ...
+None of [libfbxsdk.so libfbxsdk.a] found in [] and global paths.
+  => source produced no result.
+test config.qt3d_geometryloaders.libraries.fbx FAILED
+looking for library wayland-client
+Trying source 0 (type pkgConfig) of library wayland-client ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-client
++ /usr/bin/pkg-config --modversion wayland-client
+> 1.12.0
++ /usr/bin/pkg-config --libs-only-L wayland-client
++ /usr/bin/pkg-config --libs-only-l wayland-client
+> -lwayland-client
++ /usr/bin/pkg-config --cflags wayland-client
++ cd /home/issiki/ae/qt5/config.tests/wayland && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-client' 'QMAKE_LIBS_WAYLAND_CLIENT = /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/issiki/ae/qt5/qtwayland/config.tests/wayland
++ cd /home/issiki/ae/qt5/config.tests/wayland && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/wayland -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/wayland/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o wayland main.o   /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
+test config.qtwayland_client.libraries.wayland-client succeeded
+looking for library wayland-cursor
+Trying source 0 (type pkgConfig) of library wayland-cursor ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-cursor
++ /usr/bin/pkg-config --modversion wayland-cursor
+> 1.12.0
++ /usr/bin/pkg-config --libs-only-L wayland-cursor
++ /usr/bin/pkg-config --libs-only-l wayland-cursor
+> -lwayland-cursor
++ /usr/bin/pkg-config --cflags wayland-cursor
++ cd /home/issiki/ae/qt5/config.tests/wayland_cursor && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-cursor' 'QMAKE_LIBS_WAYLAND_CURSOR = /usr/lib/x86_64-linux-gnu/libwayland-cursor.so' 'QMAKE_DEPENDS_WAYLAND_CURSOR_CC = WAYLAND_CLIENT' 'QMAKE_DEPENDS_WAYLAND_CURSOR_LD = WAYLAND_CLIENT' 'QMAKE_LIBS_WAYLAND_CLIENT = /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/issiki/ae/qt5/qtwayland/config.tests/wayland_cursor
++ cd /home/issiki/ae/qt5/config.tests/wayland_cursor && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/wayland_cursor -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/wayland_cursor/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o wayland_cursor main.o   /usr/lib/x86_64-linux-gnu/libwayland-cursor.so /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
+test config.qtwayland_client.libraries.wayland-cursor succeeded
+executing config test wayland-scanner
++ cd /home/issiki/ae/qt5/config.tests/wayland_scanner && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-client' 'QMAKE_LIBS_WAYLAND_CLIENT = /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner
++ cd /home/issiki/ae/qt5/config.tests/wayland_scanner && MAKEFLAGS= /usr/bin/make
+> wayland-scanner client-header < /home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner/scanner-test.xml > wayland-scanner-test-client-protocol.h
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o wayland_scanner main.o   /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+test config.qtwayland_client.tests.wayland-scanner succeeded
+executing config test dmabuf-server-buffer
++ cd /home/issiki/ae/qt5/config.tests/dmabuf_server_buffer && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/dmabuf_server_buffer
++ cd /home/issiki/ae/qt5/config.tests/dmabuf_server_buffer && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/dmabuf_server_buffer -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/dmabuf_server_buffer/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o dmabuf_server_buffer main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+test config.qtwayland_client.tests.dmabuf-server-buffer succeeded
+executing config test drm-egl-server
++ cd /home/issiki/ae/qt5/config.tests/drm_egl_server && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/drm_egl_server
++ cd /home/issiki/ae/qt5/config.tests/drm_egl_server && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/drm_egl_server -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/drm_egl_server/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o drm_egl_server main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+test config.qtwayland_client.tests.drm-egl-server succeeded
+looking for library wayland-egl
+Trying source 0 (type pkgConfig) of library wayland-egl ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-egl
++ /usr/bin/pkg-config --modversion wayland-egl
+> 18.0.5
++ /usr/bin/pkg-config --libs-only-L wayland-egl
++ /usr/bin/pkg-config --libs-only-l wayland-egl
+> -lwayland-egl -lwayland-client
++ /usr/bin/pkg-config --cflags wayland-egl
++ cd /home/issiki/ae/qt5/config.tests/wayland_egl && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-egl' 'QMAKE_LIBS_WAYLAND_EGL = /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/issiki/ae/qt5/qtwayland/config.tests/wayland_egl
++ cd /home/issiki/ae/qt5/config.tests/wayland_egl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/wayland_egl -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/wayland_egl/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o wayland_egl main.o   /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
+test config.qtwayland_client.libraries.wayland-egl succeeded
+executing config test libhybris-egl-server
++ cd /home/issiki/ae/qt5/config.tests/libhybris_egl_server && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server
++ cd /home/issiki/ae/qt5/config.tests/libhybris_egl_server && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp
+> /home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp:53:61: fatal error: hybris/eglplatformcommon/hybris_nativebufferext.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtwayland_client.tests.libhybris-egl-server FAILED
+executing config test vulkan-server-buffer
++ cd /home/issiki/ae/qt5/config.tests/vulkan_server_buffer && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer
++ cd /home/issiki/ae/qt5/config.tests/vulkan_server_buffer && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer/main.cpp
+> /home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer/main.cpp:51:27: fatal error: vulkan/vulkan.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtwayland_client.tests.vulkan-server-buffer FAILED
+looking for library xcomposite
+Trying source 0 (type pkgConfig) of library xcomposite ...
++ /usr/bin/pkg-config --exists --silence-errors xcomposite
++ /usr/bin/pkg-config --modversion xcomposite
+> 0.4.4
++ /usr/bin/pkg-config --libs-only-L xcomposite
++ /usr/bin/pkg-config --libs-only-l xcomposite
+> -lXcomposite
++ /usr/bin/pkg-config --cflags xcomposite
++ cd /home/issiki/ae/qt5/config.tests/xcomposite && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xcomposite' 'QMAKE_LIBS_XCOMPOSITE = /usr/lib/x86_64-linux-gnu/libXcomposite.so' /home/issiki/ae/qt5/qtwayland/config.tests/xcomposite
++ cd /home/issiki/ae/qt5/config.tests/xcomposite && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/xcomposite -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/xcomposite/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xcomposite main.o   /usr/lib/x86_64-linux-gnu/libXcomposite.so   
+ => source accepted.
+test config.qtwayland_client.libraries.xcomposite succeeded
+looking for library glx
+Trying source 0 (type pkgConfig) of library glx ...
++ /usr/bin/pkg-config --exists --silence-errors x11 gl
++ /usr/bin/pkg-config --modversion x11 gl
+> 1.6.3
+> 18.0.5
++ /usr/bin/pkg-config --libs-only-L x11 gl
++ /usr/bin/pkg-config --libs-only-l x11 gl
+> -lX11 -lGL
++ /usr/bin/pkg-config --cflags x11 gl
+> -I/usr/include/libdrm
++ cd /home/issiki/ae/qt5/config.tests/glx && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += glx' 'QMAKE_LIBS_GLX = /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libGL.so' 'QMAKE_INCDIR_GLX = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/glx
++ cd /home/issiki/ae/qt5/config.tests/glx && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/glx -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/glx/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o glx main.o   /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libGL.so   
+ => source accepted.
+test config.qtwayland_client.libraries.glx succeeded
+looking for library wayland-server
+Trying source 0 (type pkgConfig) of library wayland-server ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-server
++ /usr/bin/pkg-config --modversion wayland-server
+> 1.12.0
++ /usr/bin/pkg-config --libs-only-L wayland-server
++ /usr/bin/pkg-config --libs-only-l wayland-server
+> -lwayland-server
++ /usr/bin/pkg-config --cflags wayland-server
++ cd /home/issiki/ae/qt5/config.tests/wayland && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-server' 'QMAKE_LIBS_WAYLAND_SERVER = /usr/lib/x86_64-linux-gnu/libwayland-server.so' /home/issiki/ae/qt5/qtwayland/config.tests/wayland
++ cd /home/issiki/ae/qt5/config.tests/wayland && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/wayland -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/wayland/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o wayland main.o   /usr/lib/x86_64-linux-gnu/libwayland-server.so   
+ => source accepted.
+test config.qtwayland_compositor.libraries.wayland-server succeeded
++ cd /home/issiki/ae/qt5/config.tests/wayland_scanner && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-server' 'QMAKE_LIBS_WAYLAND_SERVER = /usr/lib/x86_64-linux-gnu/libwayland-server.so' /home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner
++ cd /home/issiki/ae/qt5/config.tests/wayland_scanner && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f wayland-scanner-test-client-protocol.h
+> rm -f main.o
+> rm -f *~ core *.core
+> wayland-scanner client-header < /home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner/scanner-test.xml > wayland-scanner-test-client-protocol.h
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/wayland_scanner/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o wayland_scanner main.o   /usr/lib/x86_64-linux-gnu/libwayland-server.so   
+executing config test dmabuf-server-buffer
++ cd /home/issiki/ae/qt5/config.tests/dmabuf_server_buffer && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/dmabuf_server_buffer
++ cd /home/issiki/ae/qt5/config.tests/dmabuf_server_buffer && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/dmabuf_server_buffer -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/dmabuf_server_buffer/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o dmabuf_server_buffer main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+test config.qtwayland_compositor.tests.dmabuf-server-buffer succeeded
++ cd /home/issiki/ae/qt5/config.tests/drm_egl_server && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/drm_egl_server
++ cd /home/issiki/ae/qt5/config.tests/drm_egl_server && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/drm_egl_server -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/drm_egl_server/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o drm_egl_server main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+Trying source 0 (type pkgConfig) of library wayland-egl ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-egl
++ /usr/bin/pkg-config --modversion wayland-egl
+> 18.0.5
++ /usr/bin/pkg-config --libs-only-L wayland-egl
++ /usr/bin/pkg-config --libs-only-l wayland-egl
+> -lwayland-egl -lwayland-client
++ /usr/bin/pkg-config --cflags wayland-egl
++ cd /home/issiki/ae/qt5/config.tests/wayland_egl && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-egl' 'QMAKE_LIBS_WAYLAND_EGL = /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/issiki/ae/qt5/qtwayland/config.tests/wayland_egl
++ cd /home/issiki/ae/qt5/config.tests/wayland_egl && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/wayland_egl -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/wayland_egl/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o wayland_egl main.o   /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
++ cd /home/issiki/ae/qt5/config.tests/libhybris_egl_server && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' 'QMAKE_INCDIR_EGL = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server
++ cd /home/issiki/ae/qt5/config.tests/libhybris_egl_server && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp
+> /home/issiki/ae/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp:53:61: fatal error: hybris/eglplatformcommon/hybris_nativebufferext.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+executing config test vulkan-server-buffer
++ cd /home/issiki/ae/qt5/config.tests/vulkan_server_buffer && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer
++ cd /home/issiki/ae/qt5/config.tests/vulkan_server_buffer && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer/main.cpp
+> /home/issiki/ae/qt5/qtwayland/config.tests/vulkan_server_buffer/main.cpp:51:27: fatal error: vulkan/vulkan.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtwayland_compositor.tests.vulkan-server-buffer FAILED
+Trying source 0 (type pkgConfig) of library xcomposite ...
++ /usr/bin/pkg-config --exists --silence-errors xcomposite
++ /usr/bin/pkg-config --modversion xcomposite
+> 0.4.4
++ /usr/bin/pkg-config --libs-only-L xcomposite
++ /usr/bin/pkg-config --libs-only-l xcomposite
+> -lXcomposite
++ /usr/bin/pkg-config --cflags xcomposite
++ cd /home/issiki/ae/qt5/config.tests/xcomposite && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xcomposite' 'QMAKE_LIBS_XCOMPOSITE = /usr/lib/x86_64-linux-gnu/libXcomposite.so' /home/issiki/ae/qt5/qtwayland/config.tests/xcomposite
++ cd /home/issiki/ae/qt5/config.tests/xcomposite && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/xcomposite -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/xcomposite/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o xcomposite main.o   /usr/lib/x86_64-linux-gnu/libXcomposite.so   
+ => source accepted.
+Trying source 0 (type pkgConfig) of library glx ...
++ /usr/bin/pkg-config --exists --silence-errors x11 gl
++ /usr/bin/pkg-config --modversion x11 gl
+> 1.6.3
+> 18.0.5
++ /usr/bin/pkg-config --libs-only-L x11 gl
++ /usr/bin/pkg-config --libs-only-l x11 gl
+> -lX11 -lGL
++ /usr/bin/pkg-config --cflags x11 gl
+> -I/usr/include/libdrm
++ cd /home/issiki/ae/qt5/config.tests/glx && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += glx' 'QMAKE_LIBS_GLX = /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libGL.so' 'QMAKE_INCDIR_GLX = /usr/include/libdrm' /home/issiki/ae/qt5/qtwayland/config.tests/glx
++ cd /home/issiki/ae/qt5/config.tests/glx && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwayland/config.tests/glx -I. -isystem /usr/include/libdrm -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtwayland/config.tests/glx/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o glx main.o   /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libGL.so   
+ => source accepted.
+looking for library bluez
+Trying source 0 (type pkgConfig) of library bluez ...
++ /usr/bin/pkg-config --exists --silence-errors bluez
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library bluez ...
+None of [libbluetooth.so libbluetooth.a] found in [] and global paths.
+  => source produced no result.
+test config.qtconnectivity_bluetooth.libraries.bluez FAILED
+looking for library sensorfw
+Trying source 0 (type pkgConfig) of library sensorfw ...
++ /usr/bin/pkg-config --exists --silence-errors sensord-qt5
+pkg-config did not find package.
+  => source produced no result.
+test config.qtsensors_sensors.libraries.sensorfw FAILED
+looking for library gypsy
+Trying source 0 (type pkgConfig) of library gypsy ...
++ /usr/bin/pkg-config --exists --silence-errors gypsy gconf-2.0
+pkg-config did not find package.
+  => source produced no result.
+test config.qtlocation_positioning.libraries.gypsy FAILED
+executing config test winrt_geolocation
++ cd /home/issiki/ae/qt5/config.tests/winrt && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtlocation/config.tests/winrt
++ cd /home/issiki/ae/qt5/config.tests/winrt && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtlocation/config.tests/winrt -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtlocation/config.tests/winrt/main.cpp
+> /home/issiki/ae/qt5/qtlocation/config.tests/winrt/main.cpp:30:28: fatal error: windows.system.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtlocation_positioning.tests.winrt_geolocation FAILED
+looking for library alsa
+Trying source 0 (type inline) of library alsa ...
++ cd /home/issiki/ae/qt5/config.tests/alsa && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += alsa' 'QMAKE_LIBS_ALSA = /usr/lib/x86_64-linux-gnu/libasound.so' /home/issiki/ae/qt5/qtmultimedia/config.tests/alsa
++ cd /home/issiki/ae/qt5/config.tests/alsa && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtmultimedia/config.tests/alsa -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o alsatest.o /home/issiki/ae/qt5/qtmultimedia/config.tests/alsa/alsatest.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o alsa alsatest.o   /usr/lib/x86_64-linux-gnu/libasound.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.alsa succeeded
+looking for library gstreamer_1_0
+Trying source 0 (type pkgConfig) of library gstreamer_1_0 ...
++ /usr/bin/pkg-config --exists --silence-errors gstreamer-1.0 gstreamer-base-1.0 gstreamer-audio-1.0 gstreamer-video-1.0 gstreamer-pbutils-1.0
+pkg-config did not find package.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.gstreamer_1_0 FAILED
+looking for library gstreamer_0_10
+Trying source 0 (type pkgConfig) of library gstreamer_0_10 ...
++ /usr/bin/pkg-config --exists --silence-errors gstreamer-0.10 gstreamer-base-0.10 gstreamer-audio-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gstreamer-interfaces-0.10
++ /usr/bin/pkg-config --modversion gstreamer-0.10 gstreamer-base-0.10 gstreamer-audio-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gstreamer-interfaces-0.10
+> 0.10.36
+> 0.10.36
+> 0.10.36
+> 0.10.36
+> 0.10.36
+> 0.10.36
++ /usr/bin/pkg-config --libs-only-L gstreamer-0.10 gstreamer-base-0.10 gstreamer-audio-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gstreamer-interfaces-0.10
++ /usr/bin/pkg-config --libs-only-l gstreamer-0.10 gstreamer-base-0.10 gstreamer-audio-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gstreamer-interfaces-0.10
+> -lgstaudio-0.10 -lgstvideo-0.10 -lgstbase-0.10 -lgstpbutils-0.10 -lgstinterfaces-0.10 -lgstreamer-0.10 -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lglib-2.0 -lxml2
++ /usr/bin/pkg-config --cflags gstreamer-0.10 gstreamer-base-0.10 gstreamer-audio-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gstreamer-interfaces-0.10
+> -pthread -I/usr/include/gstreamer-0.10 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/libxml2
+Note: Dropped compiler flags '-pthread'.
++ cd /home/issiki/ae/qt5/config.tests/gstreamer && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += gstreamer_0_10' 'QMAKE_LIBS_GSTREAMER_0_10 = /usr/lib/x86_64-linux-gnu/libgstaudio-0.10.so /usr/lib/x86_64-linux-gnu/libgstvideo-0.10.so /usr/lib/x86_64-linux-gnu/libgstbase-0.10.so /usr/lib/x86_64-linux-gnu/libgstpbutils-0.10.so /usr/lib/x86_64-linux-gnu/libgstinterfaces-0.10.so /usr/lib/x86_64-linux-gnu/libgstreamer-0.10.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so /usr/lib/x86_64-linux-gnu/libxml2.so' 'QMAKE_INCDIR_GSTREAMER_0_10 = /usr/include/gstreamer-0.10 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include /usr/include/libxml2' /home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer
++ cd /home/issiki/ae/qt5/config.tests/gstreamer && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer -I. -isystem /usr/include/gstreamer-0.10 -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /usr/include/libxml2 -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o gstreamer main.o   /usr/lib/x86_64-linux-gnu/libgstaudio-0.10.so /usr/lib/x86_64-linux-gnu/libgstvideo-0.10.so /usr/lib/x86_64-linux-gnu/libgstbase-0.10.so /usr/lib/x86_64-linux-gnu/libgstpbutils-0.10.so /usr/lib/x86_64-linux-gnu/libgstinterfaces-0.10.so /usr/lib/x86_64-linux-gnu/libgstreamer-0.10.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so /usr/lib/x86_64-linux-gnu/libxml2.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.gstreamer_0_10 succeeded
+looking for library gstreamer_app_0_10
+Trying source 0 (type pkgConfig) of library gstreamer_app_0_10 ...
++ /usr/bin/pkg-config --exists --silence-errors gstreamer-app-0.10
++ /usr/bin/pkg-config --modversion gstreamer-app-0.10
+> 0.10.36
++ /usr/bin/pkg-config --libs-only-L gstreamer-app-0.10
++ /usr/bin/pkg-config --libs-only-l gstreamer-app-0.10
+> -lgstapp-0.10 -lgstbase-0.10 -lgstreamer-0.10 -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lglib-2.0 -lxml2
++ /usr/bin/pkg-config --cflags gstreamer-app-0.10
+> -pthread -I/usr/include/gstreamer-0.10 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/libxml2
+Note: Dropped compiler flags '-pthread'.
++ cd /home/issiki/ae/qt5/config.tests/gstreamer_appsrc && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += gstreamer_app_0_10' 'QMAKE_LIBS_GSTREAMER_APP_0_10 = /usr/lib/x86_64-linux-gnu/libgstapp-0.10.so' 'QMAKE_DEPENDS_GSTREAMER_APP_0_10_CC = GSTREAMER_0_10' 'QMAKE_DEPENDS_GSTREAMER_APP_0_10_LD = GSTREAMER_0_10' 'QMAKE_LIBS_GSTREAMER_0_10 = /usr/lib/x86_64-linux-gnu/libgstaudio-0.10.so /usr/lib/x86_64-linux-gnu/libgstvideo-0.10.so /usr/lib/x86_64-linux-gnu/libgstbase-0.10.so /usr/lib/x86_64-linux-gnu/libgstpbutils-0.10.so /usr/lib/x86_64-linux-gnu/libgstinterfaces-0.10.so /usr/lib/x86_64-linux-gnu/libgstreamer-0.10.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so /usr/lib/x86_64-linux-gnu/libxml2.so' 'QMAKE_INCDIR_GSTREAMER_0_10 = /usr/include/gstreamer-0.10 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include /usr/include/libxml2' /home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer_appsrc
++ cd /home/issiki/ae/qt5/config.tests/gstreamer_appsrc && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer_appsrc -I. -isystem /usr/include/gstreamer-0.10 -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /usr/include/libxml2 -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer_appsrc/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o gstreamer_appsrc main.o   /usr/lib/x86_64-linux-gnu/libgstapp-0.10.so /usr/lib/x86_64-linux-gnu/libgstaudio-0.10.so /usr/lib/x86_64-linux-gnu/libgstvideo-0.10.so /usr/lib/x86_64-linux-gnu/libgstbase-0.10.so /usr/lib/x86_64-linux-gnu/libgstpbutils-0.10.so /usr/lib/x86_64-linux-gnu/libgstinterfaces-0.10.so /usr/lib/x86_64-linux-gnu/libgstreamer-0.10.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so /usr/lib/x86_64-linux-gnu/libxml2.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.gstreamer_app_0_10 succeeded
+executing config test gstreamer_encodingprofiles
++ cd /home/issiki/ae/qt5/config.tests/gstreamer_encodingprofiles && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += gstreamer_0_10' 'QMAKE_LIBS_GSTREAMER_0_10 = /usr/lib/x86_64-linux-gnu/libgstaudio-0.10.so /usr/lib/x86_64-linux-gnu/libgstvideo-0.10.so /usr/lib/x86_64-linux-gnu/libgstbase-0.10.so /usr/lib/x86_64-linux-gnu/libgstpbutils-0.10.so /usr/lib/x86_64-linux-gnu/libgstinterfaces-0.10.so /usr/lib/x86_64-linux-gnu/libgstreamer-0.10.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so /usr/lib/x86_64-linux-gnu/libxml2.so' 'QMAKE_INCDIR_GSTREAMER_0_10 = /usr/include/gstreamer-0.10 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include /usr/include/libxml2' /home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer_encodingprofiles
++ cd /home/issiki/ae/qt5/config.tests/gstreamer_encodingprofiles && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer_encodingprofiles -I. -isystem /usr/include/gstreamer-0.10 -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /usr/include/libxml2 -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtmultimedia/config.tests/gstreamer_encodingprofiles/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o gstreamer_encodingprofiles main.o   /usr/lib/x86_64-linux-gnu/libgstaudio-0.10.so /usr/lib/x86_64-linux-gnu/libgstvideo-0.10.so /usr/lib/x86_64-linux-gnu/libgstbase-0.10.so /usr/lib/x86_64-linux-gnu/libgstpbutils-0.10.so /usr/lib/x86_64-linux-gnu/libgstinterfaces-0.10.so /usr/lib/x86_64-linux-gnu/libgstreamer-0.10.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so /usr/lib/x86_64-linux-gnu/libxml2.so   
+test config.qtmultimedia_multimedia.tests.gstreamer_encodingprofiles succeeded
+looking for library gstreamer_photography_0_10
+Trying source 0 (type inline) of library gstreamer_photography_0_10 ...
+None of [libgstphotography-0.10.so libgstphotography-0.10.a] found in [] and global paths.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.gstreamer_photography_0_10 FAILED
+executing config test linux_v4l
++ cd /home/issiki/ae/qt5/config.tests/linux_v4l && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtmultimedia/config.tests/linux_v4l
++ cd /home/issiki/ae/qt5/config.tests/linux_v4l && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtmultimedia/config.tests/linux_v4l -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/issiki/ae/qt5/qtmultimedia/config.tests/linux_v4l/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o linux_v4l main.o      
+test config.qtmultimedia_multimedia.tests.linux_v4l succeeded
+looking for library openal
+Trying source 0 (type pkgConfig) of library openal ...
++ /usr/bin/pkg-config --exists --silence-errors openal
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library openal ...
+  => source failed condition 'config.win32'.
+Trying source 2 (type inline) of library openal ...
+  => source failed condition 'config.darwin'.
+Trying source 3 (type inline) of library openal ...
+None of [libopenal.so libopenal.a] found in [] and global paths.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.openal FAILED
+looking for library pulseaudio
+Trying source 0 (type pkgConfig) of library pulseaudio ...
++ /usr/bin/pkg-config --exists --silence-errors libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --modversion libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> 8.0
+> 8.0
++ /usr/bin/pkg-config --libs-only-L libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --libs-only-l libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -lpulse-mainloop-glib -lpulse -lglib-2.0
++ /usr/bin/pkg-config --cflags libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -D_REENTRANT -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
++ cd /home/issiki/ae/qt5/config.tests/pulseaudio && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += pulseaudio' 'QMAKE_LIBS_PULSEAUDIO = /usr/lib/x86_64-linux-gnu/libpulse-mainloop-glib.so /usr/lib/x86_64-linux-gnu/libpulse.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_PULSEAUDIO = /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' 'QMAKE_DEFINES_PULSEAUDIO = _REENTRANT' /home/issiki/ae/qt5/qtmultimedia/config.tests/pulseaudio
++ cd /home/issiki/ae/qt5/config.tests/pulseaudio && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC -D_REENTRANT -I/home/issiki/ae/qt5/qtmultimedia/config.tests/pulseaudio -I. -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o pulseaudio.o /home/issiki/ae/qt5/qtmultimedia/config.tests/pulseaudio/pulseaudio.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o pulseaudio pulseaudio.o   /usr/lib/x86_64-linux-gnu/libpulse-mainloop-glib.so /usr/lib/x86_64-linux-gnu/libpulse.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.pulseaudio succeeded
+looking for library libresourceqt5
+Trying source 0 (type pkgConfig) of library libresourceqt5 ...
++ /usr/bin/pkg-config --exists --silence-errors libresourceqt5
+pkg-config did not find package.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.libresourceqt5 FAILED
+executing config test libclang
+test config.qttools_qdoc.tests.libclang FAILED
+executing config test webengine-alsa
++ cd /home/issiki/ae/qt5/config.tests/alsa && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtwebengine/config.tests/alsa
++ cd /home/issiki/ae/qt5/config.tests/alsa && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f alsatest.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwebengine/config.tests/alsa -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o alsatest.o /home/issiki/ae/qt5/qtwebengine/config.tests/alsa/alsatest.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o alsa alsatest.o      
+test config.qtwebengine_core.tests.webengine-alsa succeeded
+executing config test webengine-embedded-build
+test config.qtwebengine_core.tests.webengine-embedded-build FAILED
+executing config test webengine-bison
+Required bison could not be found.
+test config.qtwebengine_core.tests.webengine-bison FAILED
+executing config test webengine-flex
+Required flex could not be found.
+test config.qtwebengine_core.tests.webengine-flex FAILED
+executing config test webengine-gperf
+Required gperf could not be found.
+test config.qtwebengine_core.tests.webengine-gperf FAILED
+executing config test webengine-host-pkg-config
+Found host pkg-config: /usr/bin/pkg-config
+test config.qtwebengine_core.tests.webengine-host-pkg-config gave result /usr/bin/pkg-config
+executing config test webengine-noexecstack
++ cd /home/issiki/ae/qt5/config.tests && g++ -pipe -fuse-ld=gold -Wl,-z,noexecstack -o conftest-out conftest.cpp
+test config.qtwebengine_core.tests.webengine-noexecstack succeeded
+looking for library webengine-x11
+Trying source 0 (type pkgConfig) of library webengine-x11 ...
++ /usr/bin/pkg-config --exists --silence-errors x11
++ /usr/bin/pkg-config --modversion x11
+> 1.6.3
++ /usr/bin/pkg-config --libs-only-L x11
++ /usr/bin/pkg-config --libs-only-l x11
+> -lX11
++ /usr/bin/pkg-config --cflags x11
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-x11 succeeded
+looking for library webengine-libdrm
+Trying source 0 (type pkgConfig) of library webengine-libdrm ...
++ /usr/bin/pkg-config --exists --silence-errors libdrm
++ /usr/bin/pkg-config --modversion libdrm
+> 2.4.91
++ /usr/bin/pkg-config --libs-only-L libdrm
++ /usr/bin/pkg-config --libs-only-l libdrm
+> -ldrm
++ /usr/bin/pkg-config --cflags libdrm
+> -I/usr/include/libdrm
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-libdrm succeeded
+looking for library webengine-xcomposite
+Trying source 0 (type pkgConfig) of library webengine-xcomposite ...
++ /usr/bin/pkg-config --exists --silence-errors xcomposite
++ /usr/bin/pkg-config --modversion xcomposite
+> 0.4.4
++ /usr/bin/pkg-config --libs-only-L xcomposite
++ /usr/bin/pkg-config --libs-only-l xcomposite
+> -lXcomposite
++ /usr/bin/pkg-config --cflags xcomposite
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-xcomposite succeeded
+looking for library webengine-xcursor
+Trying source 0 (type pkgConfig) of library webengine-xcursor ...
++ /usr/bin/pkg-config --exists --silence-errors xcursor
++ /usr/bin/pkg-config --modversion xcursor
+> 1.1.14
++ /usr/bin/pkg-config --libs-only-L xcursor
++ /usr/bin/pkg-config --libs-only-l xcursor
+> -lXcursor
++ /usr/bin/pkg-config --cflags xcursor
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-xcursor succeeded
+looking for library webengine-xi
+Trying source 0 (type pkgConfig) of library webengine-xi ...
++ /usr/bin/pkg-config --exists --silence-errors xi
++ /usr/bin/pkg-config --modversion xi
+> 1.7.6
++ /usr/bin/pkg-config --libs-only-L xi
++ /usr/bin/pkg-config --libs-only-l xi
+> -lXi
++ /usr/bin/pkg-config --cflags xi
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-xi succeeded
+looking for library webengine-xtst
+Trying source 0 (type pkgConfig) of library webengine-xtst ...
++ /usr/bin/pkg-config --exists --silence-errors xtst
++ /usr/bin/pkg-config --modversion xtst
+> 1.2.2
++ /usr/bin/pkg-config --libs-only-L xtst
++ /usr/bin/pkg-config --libs-only-l xtst
+> -lXtst
++ /usr/bin/pkg-config --cflags xtst
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-xtst succeeded
+looking for library webengine-poppler-cpp
+Trying source 0 (type pkgConfig) of library webengine-poppler-cpp ...
++ /usr/bin/pkg-config --exists --silence-errors poppler-cpp
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-poppler-cpp FAILED
+looking for library pulseaudio
+Trying source 0 (type pkgConfig) of library pulseaudio ...
++ /usr/bin/pkg-config --exists --silence-errors libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --modversion libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> 8.0
+> 8.0
++ /usr/bin/pkg-config --libs-only-L libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --libs-only-l libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -lpulse-mainloop-glib -lpulse -lglib-2.0
++ /usr/bin/pkg-config --cflags libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -D_REENTRANT -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+ => source accepted.
+test config.qtwebengine_core.libraries.pulseaudio succeeded
+executing config test webengine-python2
+test config.qtwebengine_core.tests.webengine-python2 gave result /usr/bin/python2
+looking for library webengine-dbus
+Trying source 0 (type pkgConfig) of library webengine-dbus ...
++ /usr/bin/pkg-config --exists --silence-errors dbus-1
++ /usr/bin/pkg-config --modversion dbus-1
+> 1.10.6
++ /usr/bin/pkg-config --libs-only-L dbus-1
++ /usr/bin/pkg-config --libs-only-l dbus-1
+> -ldbus-1
++ /usr/bin/pkg-config --cflags dbus-1
+> -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-dbus succeeded
+looking for library webengine-fontconfig
+Trying source 0 (type pkgConfig) of library webengine-fontconfig ...
++ /usr/bin/pkg-config --exists --silence-errors fontconfig
++ /usr/bin/pkg-config --modversion fontconfig
+> 2.11.94
++ /usr/bin/pkg-config --libs-only-L fontconfig
++ /usr/bin/pkg-config --libs-only-l fontconfig
+> -lfontconfig -lfreetype
++ /usr/bin/pkg-config --cflags fontconfig
+> -I/usr/include/freetype2
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-fontconfig succeeded
+looking for library webengine-freetype
+Trying source 0 (type pkgConfig) of library webengine-freetype ...
++ /usr/bin/pkg-config --exists --silence-errors freetype2
++ /usr/bin/pkg-config --modversion freetype2
+> 18.1.12
++ /usr/bin/pkg-config --libs-only-L freetype2
++ /usr/bin/pkg-config --libs-only-l freetype2
+> -lfreetype
++ /usr/bin/pkg-config --cflags freetype2
+> -I/usr/include/freetype2
++ cd /home/issiki/ae/qt5/config.tests/webengine-freetype && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += webengine-freetype' 'QMAKE_LIBS_WEBENGINE_FREETYPE = /usr/lib/x86_64-linux-gnu/libfreetype.so' 'QMAKE_INCDIR_WEBENGINE_FREETYPE = /usr/include/freetype2' /home/issiki/ae/qt5/config.tests/webengine-freetype
++ cd /home/issiki/ae/qt5/config.tests/webengine-freetype && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -isystem /usr/include/freetype2 -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o webengine-freetype main.o   /usr/lib/x86_64-linux-gnu/libfreetype.so   
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-freetype succeeded
+looking for library webengine-glib
+Trying source 0 (type pkgConfig) of library webengine-glib ...
++ /usr/bin/pkg-config --exists --silence-errors glib-2.0 '>=' 2.32.0
++ /usr/bin/pkg-config --modversion glib-2.0 '>=' 2.32.0
+> 2.48.2
++ /usr/bin/pkg-config --libs-only-L glib-2.0 '>=' 2.32.0
++ /usr/bin/pkg-config --libs-only-l glib-2.0 '>=' 2.32.0
+> -lglib-2.0
++ /usr/bin/pkg-config --cflags glib-2.0 '>=' 2.32.0
+> -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-glib succeeded
+executing config test webengine-glibc
+Found ldd from path: /usr/bin/ldd
++ /usr/bin/ldd --version
+> ldd (Ubuntu GLIBC 2.23-0ubuntu11) 2.23
+> Copyright (C) 2016 Free Software Foundation, Inc.
+> This is free software; see the source for copying conditions.  There is NO
+> warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+> Written by Roland McGrath and Ulrich Drepper.
+Found libc version: 2.23
+test config.qtwebengine_core.tests.webengine-glibc succeeded
+looking for library webengine-jpeglib
+Trying source 0 (type pkgConfig) of library webengine-jpeglib ...
++ /usr/bin/pkg-config --exists --silence-errors libjpeg
++ /usr/bin/pkg-config --modversion libjpeg
++ /usr/bin/pkg-config --libs-only-L libjpeg
++ /usr/bin/pkg-config --libs-only-l libjpeg
+> -ljpeg
++ /usr/bin/pkg-config --cflags libjpeg
++ cd /home/issiki/ae/qt5/config.tests/webengine-jpeglib && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += webengine-jpeglib' 'QMAKE_LIBS_WEBENGINE_JPEGLIB = /usr/lib/x86_64-linux-gnu/libjpeg.so' /home/issiki/ae/qt5/config.tests/webengine-jpeglib
++ cd /home/issiki/ae/qt5/config.tests/webengine-jpeglib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:12:47: error: ‘jpeg_crop_scanline’ was not declared in this scope
+>      jpeg_crop_scanline(nullptr, &dummy, &dummy);
+>                                                ^
+> main.cpp:13:39: error: ‘jpeg_skip_scanlines’ was not declared in this scope
+>      jpeg_skip_scanlines(nullptr, dummy);
+>                                        ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+ => source failed verification.
+Trying source 1 (type inline) of library webengine-jpeglib ...
++ cd /home/issiki/ae/qt5/config.tests/webengine-jpeglib && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += webengine-jpeglib' 'QMAKE_LIBS_WEBENGINE_JPEGLIB = /usr/lib/x86_64-linux-gnu/libjpeg.so' /home/issiki/ae/qt5/config.tests/webengine-jpeglib
++ cd /home/issiki/ae/qt5/config.tests/webengine-jpeglib && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:12:47: error: ‘jpeg_crop_scanline’ was not declared in this scope
+>      jpeg_crop_scanline(nullptr, &dummy, &dummy);
+>                                                ^
+> main.cpp:13:39: error: ‘jpeg_skip_scanlines’ was not declared in this scope
+>      jpeg_skip_scanlines(nullptr, dummy);
+>                                        ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+ => source failed verification.
+test config.qtwebengine_core.libraries.webengine-jpeglib FAILED
+looking for library webengine-jsoncpp
+Trying source 0 (type pkgConfig) of library webengine-jsoncpp ...
++ /usr/bin/pkg-config --exists --silence-errors jsoncpp
++ /usr/bin/pkg-config --modversion jsoncpp
+> 1.7.2
++ /usr/bin/pkg-config --libs-only-L jsoncpp
++ /usr/bin/pkg-config --libs-only-l jsoncpp
+> -ljsoncpp
++ /usr/bin/pkg-config --cflags jsoncpp
+> -I/usr/include/jsoncpp
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-jsoncpp succeeded
+executing config test webengine-khr
++ cd /home/issiki/ae/qt5/config.tests/khr && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtwebengine/config.tests/khr
++ cd /home/issiki/ae/qt5/config.tests/khr && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwebengine/config.tests/khr -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o khr.o /home/issiki/ae/qt5/qtwebengine/config.tests/khr/khr.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o khr khr.o      
+test config.qtwebengine_core.tests.webengine-khr succeeded
+looking for library webengine-lcms2
+Trying source 0 (type pkgConfig) of library webengine-lcms2 ...
++ /usr/bin/pkg-config --exists --silence-errors lcms2
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-lcms2 FAILED
+looking for library webengine-libevent
+Trying source 0 (type pkgConfig) of library webengine-libevent ...
++ /usr/bin/pkg-config --exists --silence-errors libevent
++ /usr/bin/pkg-config --modversion libevent
+> 2.0.21-stable
++ /usr/bin/pkg-config --libs-only-L libevent
++ /usr/bin/pkg-config --libs-only-l libevent
+> -levent
++ /usr/bin/pkg-config --cflags libevent
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-libevent succeeded
+executing config test webengine-libvpx
++ cd /home/issiki/ae/qt5/config.tests/libvpx && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtwebengine/config.tests/libvpx
+> Project ERROR: vpx development package not found
+test config.qtwebengine_core.tests.webengine-libvpx FAILED
+looking for library webengine-webp
+Trying source 0 (type pkgConfig) of library webengine-webp ...
++ /usr/bin/pkg-config --exists --silence-errors libwebp libwebpmux libwebpdemux
++ /usr/bin/pkg-config --modversion libwebp libwebpmux libwebpdemux
+> 0.4.4
+> 0.4.4
+> 0.4.4
++ /usr/bin/pkg-config --libs-only-L libwebp libwebpmux libwebpdemux
++ /usr/bin/pkg-config --libs-only-l libwebp libwebpmux libwebpdemux
+> -lwebpmux -lwebpdemux -lwebp
++ /usr/bin/pkg-config --cflags libwebp libwebpmux libwebpdemux
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-webp succeeded
+looking for library webengine-libxml2
+Trying source 0 (type pkgConfig) of library webengine-libxml2 ...
++ /usr/bin/pkg-config --exists --silence-errors libxml-2.0 libxslt
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-libxml2 FAILED
+looking for library webengine-minizip
+Trying source 0 (type pkgConfig) of library webengine-minizip ...
++ /usr/bin/pkg-config --exists --silence-errors minizip
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-minizip FAILED
+executing config test webengine-ninja
+Building own ninja
+test config.qtwebengine_core.tests.webengine-ninja FAILED
+looking for library webengine-nss
+Trying source 0 (type pkgConfig) of library webengine-nss ...
++ /usr/bin/pkg-config --exists --silence-errors nss '>=' 3.26
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-nss FAILED
+looking for library webengine-opus
+Trying source 0 (type pkgConfig) of library webengine-opus ...
++ /usr/bin/pkg-config --exists --silence-errors opus
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-opus FAILED
+looking for library webengine-png
+Trying source 0 (type pkgConfig) of library webengine-png ...
++ /usr/bin/pkg-config --exists --silence-errors libpng '>=' 1.6.0
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-png FAILED
+looking for library webengine-protobuf
+Trying source 0 (type pkgConfig) of library webengine-protobuf ...
++ /usr/bin/pkg-config --exists --silence-errors protobuf
++ /usr/bin/pkg-config --modversion protobuf
+> 2.6.1
++ /usr/bin/pkg-config --libs-only-L protobuf
++ /usr/bin/pkg-config --libs-only-l protobuf
+> -lprotobuf -lpthread
++ /usr/bin/pkg-config --cflags protobuf
+> -pthread
+Note: Dropped compiler flags '-pthread'.
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-protobuf succeeded
+executing config test webengine-protoc
+Found protoc from path: /usr/bin/protoc
+test config.qtwebengine_core.tests.webengine-protoc succeeded
+executing config test webengine-re2
++ cd /home/issiki/ae/qt5/config.tests/re2 && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtwebengine/config.tests/re2
++ cd /home/issiki/ae/qt5/config.tests/re2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwebengine/config.tests/re2 -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o re2.o /home/issiki/ae/qt5/qtwebengine/config.tests/re2/re2.cpp
+> /home/issiki/ae/qt5/qtwebengine/config.tests/re2/re2.cpp:29:21: fatal error: re2/re2.h: No such file or directory
+> compilation terminated.
+> Makefile:169: recipe for target 're2.o' failed
+> make: *** [re2.o] Error 1
+test config.qtwebengine_core.tests.webengine-re2 FAILED
+executing config test webengine-snappy
++ cd /home/issiki/ae/qt5/config.tests/snappy && /home/issiki/ae/qt5/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/issiki/ae/qt5/qtwebengine/config.tests/snappy
++ cd /home/issiki/ae/qt5/config.tests/snappy && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++11 -w -fPIC  -I/home/issiki/ae/qt5/qtwebengine/config.tests/snappy -I. -I/home/issiki/ae/qt5/qtbase/mkspecs/linux-g++ -o snappy.o /home/issiki/ae/qt5/qtwebengine/config.tests/snappy/snappy.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o snappy snappy.o   -lsnappy   
+test config.qtwebengine_core.tests.webengine-snappy succeeded
+looking for library webengine-zlib
+Trying source 0 (type pkgConfig) of library webengine-zlib ...
++ /usr/bin/pkg-config --exists --silence-errors zlib
++ /usr/bin/pkg-config --modversion zlib
+> 1.2.8
++ /usr/bin/pkg-config --libs-only-L zlib
++ /usr/bin/pkg-config --libs-only-l zlib
+> -lz
++ /usr/bin/pkg-config --cflags zlib
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-zlib succeeded

@@ -1,0 +1,193 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_557f7/fast && /usr/bin/make -f CMakeFiles/cmTC_557f7.dir/build.make CMakeFiles/cmTC_557f7.dir/build
+make[1]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_557f7.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_557f7.dir/src.c.o   -c /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_557f7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_557f7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_557f7.dir/src.c.o  -o cmTC_557f7 
+CMakeFiles/cmTC_557f7.dir/src.c.o: In function `main':
+src.c:(.text+0x3c): undefined reference to `pthread_create'
+src.c:(.text+0x48): undefined reference to `pthread_detach'
+src.c:(.text+0x59): undefined reference to `pthread_join'
+src.c:(.text+0x6d): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_557f7.dir/build.make:86: recipe for target 'cmTC_557f7' failed
+make[1]: *** [cmTC_557f7] Error 1
+make[1]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_557f7/fast' failed
+make: *** [cmTC_557f7/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d93f4/fast && /usr/bin/make -f CMakeFiles/cmTC_d93f4.dir/build.make CMakeFiles/cmTC_d93f4.dir/build
+make[1]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d93f4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d93f4.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d93f4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d93f4.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_d93f4.dir/CheckFunctionExists.c.o  -o cmTC_d93f4 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_d93f4.dir/build.make:86: recipe for target 'cmTC_d93f4' failed
+make[1]: *** [cmTC_d93f4] Error 1
+make[1]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_d93f4/fast' failed
+make: *** [cmTC_d93f4/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a2867/fast && /usr/bin/make -f CMakeFiles/cmTC_a2867.dir/build.make CMakeFiles/cmTC_a2867.dir/build
+make[1]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a2867.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a2867.dir/src.c.o   -c /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a2867
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2867.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_a2867.dir/src.c.o  -o cmTC_a2867 
+CMakeFiles/cmTC_a2867.dir/src.c.o: In function `main':
+src.c:(.text+0x3c): undefined reference to `pthread_create'
+src.c:(.text+0x48): undefined reference to `pthread_detach'
+src.c:(.text+0x59): undefined reference to `pthread_join'
+src.c:(.text+0x6d): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a2867.dir/build.make:86: recipe for target 'cmTC_a2867' failed
+make[1]: *** [cmTC_a2867] Error 1
+make[1]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_a2867/fast' failed
+make: *** [cmTC_a2867/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_61be3/fast && /usr/bin/make -f CMakeFiles/cmTC_61be3.dir/build.make CMakeFiles/cmTC_61be3.dir/build
+make[1]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61be3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_61be3.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_61be3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61be3.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_61be3.dir/CheckFunctionExists.c.o  -o cmTC_61be3 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_61be3.dir/build.make:86: recipe for target 'cmTC_61be3' failed
+make[1]: *** [cmTC_61be3] Error 1
+make[1]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_61be3/fast' failed
+make: *** [cmTC_61be3/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ff288/fast && make[1]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_ff288.dir/build.make CMakeFiles/cmTC_ff288.dir/build
+make[2]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ff288.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ff288.dir/src.c.o   -c /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ff288
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff288.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_ff288.dir/src.c.o  -o cmTC_ff288 
+CMakeFiles/cmTC_ff288.dir/src.c.o: In function `main':
+src.c:(.text+0x3c): undefined reference to `pthread_create'
+src.c:(.text+0x48): undefined reference to `pthread_detach'
+src.c:(.text+0x59): undefined reference to `pthread_join'
+src.c:(.text+0x6d): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ff288.dir/build.make:86: recipe for target 'cmTC_ff288' failed
+make[2]: *** [cmTC_ff288] Error 1
+make[2]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_ff288/fast' failed
+make[1]: *** [cmTC_ff288/fast] Error 2
+make[1]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_16aac/fast && make[1]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_16aac.dir/build.make CMakeFiles/cmTC_16aac.dir/build
+make[2]: Entering directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_16aac.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_16aac.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.14/Modules/CheckFunctionExists.c
+Linking C executable cmTC_16aac
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16aac.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_16aac.dir/CheckFunctionExists.c.o  -o cmTC_16aac -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_16aac.dir/build.make:86: recipe for target 'cmTC_16aac' failed
+make[2]: *** [cmTC_16aac] Error 1
+make[2]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_16aac/fast' failed
+make[1]: *** [cmTC_16aac/fast] Error 2
+make[1]: Leaving directory '/home/issiki/ae/dataset_generator/DatasetGenerator/build/CMakeFiles/CMakeTmp'
+
+
+
